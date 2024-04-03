@@ -871,11 +871,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: a4d6d911-7c18-4a10-8bd3-b6813e48e980
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: ScientificGJ2024
+  organizationId: unity_ac9b2f1ecdcc76ef4cb2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
