@@ -1,4 +1,5 @@
-﻿- As you press start, you hear the door open. Your boyfriend enters the room. 
+﻿
+- As you press start, you hear the door open. Your boyfriend enters the room. 
 - You have now to choose your character.
 *   [Choose Woman] -> woman_option
 *   [Choose Man] -> man_option
@@ -22,5 +23,11 @@
 
 === choose_name ===
 - You now have to choose a name
+- Enter your name # name_select
+- 'Well, looks like you found your first problem!' # kai
+- 'I will leave you to your report, see you later!' # kai
+- He kiss you quickly, before leaving the room. 
+- You are annoyed to find a bug so early. 
+- Write down when you found corrupted parts!
 
 - -> END

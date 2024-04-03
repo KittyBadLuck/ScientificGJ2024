@@ -12,16 +12,19 @@ public class Master_Dialogues : MonoBehaviour
     public static event Action<Story> OnCreateStory;
 
     [SerializeField]
-    private TextAsset _introJSONAsset = null;
+    private TextAsset _storyJSONAsset = null;
     public Story story;
 
-    [SerializeField]
-    private Canvas _canvas = null;
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
 
     //Option Buttons
     public Button[] buttonArray = null;
+
+    public GameObject chooseNameParent = null;
+
+    //bool safeties
+    private bool _canPass = true;
 
 
     // Start is called before the first frame update
@@ -32,9 +35,16 @@ public class Master_Dialogues : MonoBehaviour
 
     void StartIntro()
     {
-        story = new Story(_introJSONAsset.text);
+        story = new Story(_storyJSONAsset.text);
         if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
+    }
+
+    void ChooseName()
+    {
+        _canPass = false;
+        chooseNameParent.SetActive(true);
+        print("choose name");
     }
 
     void RefreshView()
@@ -45,15 +55,25 @@ public class Master_Dialogues : MonoBehaviour
         {
             string text = story.Continue();
             List<string> lineTags = story.currentTags;
+
             if (lineTags.Count > 0)
             {
-                if (lineTags.Contains("kai"))
+                switch (lineTags[0])
                 {
-                    SetTalkerName("Kai");
-                }
-                else if (lineTags.Contains("you"))
-                {
+                    case "kai":
+                        SetTalkerName("Kai");
+                        break;
+
+                    case "you":
                     SetTalkerName("You");
+                        break;
+
+                    case "name_select":
+                        ChooseName();
+                        break;
+
+                    default:
+                        break;
                 }
             }
             // This removes any white space from the text.
@@ -110,15 +130,17 @@ public class Master_Dialogues : MonoBehaviour
 
     public void Pass(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            if(story.currentChoices.Count == 0 )
+        if(_canPass){ 
+            if (context.performed)
             {
-                if (story.canContinue == false) 
-                { EndDialogues(); }
-                else { RefreshView(); }
+                if(story.currentChoices.Count == 0 )
+                {
+                    if (story.canContinue == false) 
+                    { EndDialogues(); }
+                    else { RefreshView(); }
+                }
             }
-        }
+        };
 
     }
 
@@ -148,4 +170,14 @@ public class Master_Dialogues : MonoBehaviour
         return choice;
     }
 
+    public void ValidateName(TMP_Text nameTMP)
+    {
+        if(nameTMP.text != null)
+        {
+            print("Make Name Bug");
+            _canPass = true;
+            chooseNameParent.SetActive(false);
+
+        }
+    }
 }
