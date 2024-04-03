@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c7122c37-0f7a-4906-a45a-49e41f69fd90" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ScientificGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ScientificGJ2024/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Test_Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Test_Player.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/test.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CommodorGame/test.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Val_Dev-Comodor_RPG.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Val_Dev-Comodor_RPG.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CommodorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712153262398</updated>
       <workItem from="1712153265519" duration="7531000" />
-      <workItem from="1712169649042" duration="4183000" />
+      <workItem from="1712169649042" duration="6538000" />
     </task>
     <servers />
   </component>

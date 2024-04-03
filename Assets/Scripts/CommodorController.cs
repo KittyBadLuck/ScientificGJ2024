@@ -12,6 +12,7 @@ public class CommodorController : MonoBehaviour
 {
     // CONTANTS
     public int GAME_STAGE = 0;
+    public Vector2 SCREEN_SIZE = new Vector2(7.99f, 3.99f);
     
     // COMPONENTS
     // public GameManager _gameManager;
@@ -19,6 +20,7 @@ public class CommodorController : MonoBehaviour
     public GameObject _actionMenu;
     public GameObject _genderAssignementSelection;
     public GameObject _player;
+    private BoxCollider _playerCollider;
     public List<Button> _actionButtons;
     
     // VARS
@@ -36,6 +38,7 @@ public class CommodorController : MonoBehaviour
         _startButton.SetActive(true);
         _actionMenu.SetActive(false);
         _genderAssignementSelection.SetActive(false);
+        _playerCollider = _player.GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -68,16 +71,39 @@ public class CommodorController : MonoBehaviour
 
     void UpdatePlayer()
     {
+        Vector3 playerPose = _player.transform.position;
+        
         float _hAxe = Input.GetAxis("Horizontal");
         float _vAxe = Input.GetAxis("Vertical");
 
         float xMove = _hAxe * PIXEL_SPEED;
         float yMove = _vAxe * PIXEL_SPEED;
-
+        
         Vector3 move = new Vector3(xMove, yMove, 0);
         _player.transform.position += move;
+
+        if (playerPose.x < -SCREEN_SIZE[0])
+        {
+            playerPose = new Vector3(-8, playerPose.y, playerPose.z);
+            Debug.Log("brbrbr");
+        }
+        else if (playerPose.x > SCREEN_SIZE[0])
+        {
+            playerPose = new Vector3(8, playerPose.y, playerPose.z);
+            Debug.Log("brbrbr");
+        }
+        if (playerPose.z < -SCREEN_SIZE[1])
+        {
+            playerPose = new Vector3(playerPose.x, playerPose.y, -4);
+            Debug.Log("brbrbr");
+        }
+        else if (playerPose.z > SCREEN_SIZE[1])
+        {
+            playerPose = new Vector3(playerPose.x, playerPose.y, 4);
+            Debug.Log("brbrbr");
+        }
     }
-    
+
     // BUTTON ACTION CALLING
     void UpdateGAMESTAGE(int n = 1)
     {
