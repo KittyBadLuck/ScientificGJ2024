@@ -20,6 +20,7 @@ public class CommodorController : MonoBehaviour
     public GameObject _actionMenu;
     public GameObject _genderAssignementSelection;
     public GameObject _player;
+    public GameObject _texteZone;
     private BoxCollider _playerCollider;
     public List<Button> _actionButtons;
     
@@ -34,6 +35,7 @@ public class CommodorController : MonoBehaviour
 
     private void Awake()
     {
+        _texteZone.SetActive(false);
         _player.SetActive(false);
         _startButton.SetActive(true);
         _actionMenu.SetActive(false);
@@ -64,6 +66,7 @@ public class CommodorController : MonoBehaviour
                 break;
             case 2:
                 _player.SetActive(true);
+                _texteZone.SetActive(true);
                 Destroy(_genderAssignementSelection);
                 break;
         }
@@ -82,26 +85,26 @@ public class CommodorController : MonoBehaviour
         Vector3 move = new Vector3(xMove, yMove, 0);
         _player.transform.position += move;
 
-        if (playerPose.x < -SCREEN_SIZE[0])
-        {
-            playerPose = new Vector3(-8, playerPose.y, playerPose.z);
-            Debug.Log("brbrbr");
-        }
-        else if (playerPose.x > SCREEN_SIZE[0])
-        {
-            playerPose = new Vector3(8, playerPose.y, playerPose.z);
-            Debug.Log("brbrbr");
-        }
-        if (playerPose.z < -SCREEN_SIZE[1])
-        {
-            playerPose = new Vector3(playerPose.x, playerPose.y, -4);
-            Debug.Log("brbrbr");
-        }
-        else if (playerPose.z > SCREEN_SIZE[1])
-        {
-            playerPose = new Vector3(playerPose.x, playerPose.y, 4);
-            Debug.Log("brbrbr");
-        }
+        // if (playerPose.x < -SCREEN_SIZE[0])
+        // {
+        //     playerPose = new Vector3(-8, playerPose.y, playerPose.z);
+        //     Debug.Log("brbrbr");
+        // }
+        // else if (playerPose.x > SCREEN_SIZE[0])
+        // {
+        //     playerPose = new Vector3(8, playerPose.y, playerPose.z);
+        //     Debug.Log("brbrbr");
+        // }
+        // if (playerPose.z < -SCREEN_SIZE[1])
+        // {
+        //     playerPose = new Vector3(playerPose.x, playerPose.y, -4);
+        //     Debug.Log("brbrbr");
+        // }
+        // else if (playerPose.z > SCREEN_SIZE[1])
+        // {
+        //     playerPose = new Vector3(playerPose.x, playerPose.y, 4);
+        //     Debug.Log("brbrbr");
+        // }
     }
 
     // BUTTON ACTION CALLING
