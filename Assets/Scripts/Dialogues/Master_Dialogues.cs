@@ -17,12 +17,7 @@ public class Master_Dialogues : MonoBehaviour
     [SerializeField]
     private Canvas _canvas = null;
     public TMP_Text dialogueText = null;
-
-    // UI Prefabs
-    [SerializeField]
-    private TMP_Text _textPrefab = null;
-    [SerializeField]
-    private Button _buttonPrefab = null;
+    public TMP_Text nameText = null;
 
     //Option Buttons
     public Button[] buttonArray = null;
@@ -44,15 +39,24 @@ public class Master_Dialogues : MonoBehaviour
     void RefreshView()
     {
         CleanView(); 
-        while (story.canContinue)
-        {
-            // Continue gets the next line of the story
-            string text = story.Continue();
-            // This removes any white space from the text.
-            text = text.Trim();
-            // Display the text on screen!
-            CreateContentView(text);
+        // Continue gets the next line of the story
+        string text = story.Continue();
+        List<string> lineTags = story.currentTags;
+        if (lineTags.Count  > 0) {
+            if(lineTags.Contains("kai"))
+            {
+                SetTalkerName("Kai");
+            }
+            else if (lineTags.Contains("you"))
+            {
+                SetTalkerName("You");
+            }
         }
+        // This removes any white space from the text.
+        text = text.Trim();
+        // Display the text on screen!
+        CreateContentView(text);
+
 
 
         // Display all the choices, if there are any!
@@ -81,8 +85,14 @@ public class Master_Dialogues : MonoBehaviour
     }
 
     void CreateContentView(string text)
-    {
+    {  
         dialogueText.text = text;
+    }
+    void SetTalkerName(string name)
+    {
+        nameText.gameObject.SetActive(true);
+
+        nameText.text = name;
     }
 
     void CleanView()
@@ -91,7 +101,7 @@ public class Master_Dialogues : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
-
+        nameText.gameObject.SetActive(false);
         dialogueText.text = " ";
 
     }
@@ -101,6 +111,14 @@ public class Master_Dialogues : MonoBehaviour
     {
         story.ChooseChoiceIndex(choice.index);
         RefreshView();
+    }
+
+    public void Pass()
+    {
+        if( story.currentChoices.Count == 0 )
+        {
+            RefreshView();
+        }
     }
 
     // Creates a button showing the choice text

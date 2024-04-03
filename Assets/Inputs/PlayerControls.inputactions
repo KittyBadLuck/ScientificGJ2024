@@ -1,14 +1,14 @@
 {
-    "name": "New Controls",
+    "name": "PlayerControls",
     "maps": [
         {
-            "name": "New action map1",
-            "id": "bc8b7d5b-d7a9-4f01-a418-c2b55b35b67c",
+            "name": "Dialogues",
+            "id": "d7795723-ac43-4d6c-92f5-250dd3eaa1a8",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "PassDialogues",
                     "type": "Button",
-                    "id": "87b67f54-357e-4560-b77a-ce58649a2058",
+                    "id": "7c63a2e6-1f6c-42cf-b5a2-f57f119db9fd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,12 +18,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "32c29ba5-2b8f-4b15-b8b4-79527e7d0a9a",
-                    "path": "<Keyboard>/a",
+                    "id": "aec16750-aaea-4470-b488-b652055a54a0",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PassDialogues",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -32,11 +32,16 @@
     ],
     "controlSchemes": [
         {
-            "name": "New control scheme",
-            "bindingGroup": "New control scheme",
+            "name": "KeyBoard+Mouse",
+            "bindingGroup": "KeyBoard+Mouse",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

@@ -1,19 +1,24 @@
-﻿- I looked at Monsieur Fogg 
-*   ... and I could contain myself no longer.
-    'What is the purpose of our journey, Monsieur?'
-    'A wager,' he replied.
-    * *     'A wager!'[] I returned.
-            He nodded. 
-            * * *   'But surely that is foolishness!'
-            * * *  'A most serious matter then!'
-            - - -   He nodded again.
-            * * *   'But can we win?'
-                    'That is what we will endeavour to find out,' he answered.
-            * * *   'A modest wager, I trust?'
-                    'Twenty thousand pounds,' he replied, quite flatly.
-            * * *   I asked nothing further of him then[.], and after a final, polite cough, he offered nothing more to me. <>
-    * *     'Ah[.'],' I replied, uncertain what I thought.
-    - -     After that, <>
-*   ... but I said nothing[] and <>
-- we passed the day in silence.
+﻿- As you press start, you hear the door open. Your boyfriend enters the room. 
+- You have now to choose your character.
+*   [Choose Woman] -> woman_option
+*   [Choose Man] -> man_option
+
+=== woman_option ===
+- You hesitate , before clicking on the option.
+- -> choose_name
+
+=== man_option ===
+- You click on the option.
+'You choose man again?' # kai
+* [Change your mind]
+	'It was just to test the option' # you
+* 'Why not ?' # you
+	'It doesn't change much, I just wanted to' # you
+* [Don't answer]
+	'...' # kai
+- -> choose_name
+
+=== choose_name ===
+
+
 - -> END
