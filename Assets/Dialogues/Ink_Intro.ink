@@ -5,6 +5,7 @@
 
 === woman_option ===
 - You hesitate , before clicking on the option.
+
 - -> choose_name
 
 === man_option ===
@@ -16,9 +17,10 @@
 	'It doesn't change much, I just wanted to' # you
 * [Don't answer]
 	'...' # kai
+	
 - -> choose_name
 
 === choose_name ===
-
+- You now have to choose a name
 
 - -> END

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class Master_Dialogues : MonoBehaviour
@@ -60,15 +61,14 @@ public class Master_Dialogues : MonoBehaviour
             // Display the text on screen!
             CreateContentView(text);
         }
-      
-
+        
         // Display all the choices, if there are any!
         if (story.currentChoices.Count > 0)
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
                 Choice choice = story.currentChoices[i];
-                Button button = CreateChoiceView(choice.text.Trim() , i);
+                Button button = CreateChoiceView(choice.text.Trim(), i);
                 // Tell the button what to do when we press it
                 button.onClick.AddListener(delegate
                 {
@@ -76,15 +76,7 @@ public class Master_Dialogues : MonoBehaviour
                 });
             }
         }
-        // If we've read all the content and there's no choices, the story is finished!
-        else
-        {
-            Button choice = CreateChoiceView("End of story.\nRestart?" , 0 );
-            choice.onClick.AddListener(delegate
-            {
-                StartIntro();
-            });
-        }
+
     }
 
     void CreateContentView(string text)
@@ -116,12 +108,26 @@ public class Master_Dialogues : MonoBehaviour
         RefreshView();
     }
 
-    public void Pass()
+    public void Pass(InputAction.CallbackContext context)
     {
-        if( story.currentChoices.Count == 0 )
+        if (context.performed)
         {
-            RefreshView();
+            if(story.currentChoices.Count == 0 )
+            {
+                if (story.canContinue == false) 
+                { EndDialogues(); }
+                else { RefreshView(); }
+            }
         }
+
+    }
+
+
+    void EndDialogues()
+    {
+        print("End");
+        this.gameObject.SetActive(false);
+
     }
 
     // Creates a button showing the choice text

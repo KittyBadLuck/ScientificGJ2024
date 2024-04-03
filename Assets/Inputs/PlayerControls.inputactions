@@ -22,7 +22,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyBoard+Mouse",
                     "action": "PassDialogues",
                     "isComposite": false,
                     "isPartOfComposite": false
