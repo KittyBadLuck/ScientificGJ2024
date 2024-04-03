@@ -43,6 +43,7 @@ public class Master_Dialogues : MonoBehaviour
 
     void RefreshView()
     {
+        CleanView(); 
         while (story.canContinue)
         {
             // Continue gets the next line of the story
@@ -60,7 +61,7 @@ public class Master_Dialogues : MonoBehaviour
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
                 Choice choice = story.currentChoices[i];
-                Button button = CreateChoiceView(i , choice.text.Trim());
+                Button button = CreateChoiceView(choice.text.Trim() , i);
                 // Tell the button what to do when we press it
                 button.onClick.AddListener(delegate
                 {
@@ -71,10 +72,10 @@ public class Master_Dialogues : MonoBehaviour
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            Button choice = CreateChoiceView("End of story.\nRestart?");
+            Button choice = CreateChoiceView("End of story.\nRestart?" , 0 );
             choice.onClick.AddListener(delegate
             {
-                StartStory();
+                StartIntro();
             });
         }
     }
@@ -84,8 +85,14 @@ public class Master_Dialogues : MonoBehaviour
         dialogueText.text = text;
     }
 
-    void RemoveChildren()
+    void CleanView()
     {
+        foreach (Button button in buttonArray)
+        {
+            button.gameObject.SetActive(false);
+        }
+
+        dialogueText.text = " ";
 
     }
 
@@ -97,14 +104,14 @@ public class Master_Dialogues : MonoBehaviour
     }
 
     // Creates a button showing the choice text
-    Button CreateChoiceView(int index , string text)
+    Button CreateChoiceView( string text, int index)
     {
         // Creates the button from a prefab
         Button choice = buttonArray[index];
-        //choice.gameobject.SetActive(true);
+        choice.gameObject.SetActive(true);
 
         // Gets the text from the button prefab
-        Text choiceText = choice.GetComponentInChildren<Text>();
+        TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
         choiceText.text = text;
 
         // Make the button expand to fit the text
