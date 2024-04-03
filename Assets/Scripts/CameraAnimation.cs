@@ -22,14 +22,14 @@ public class CameraAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E)) //maintenir E pour Zoomer puis relacher pour dezoomer
+        if (Input.GetKey(KeyCode.Space)) //maintenir Space pour Zoomer puis relacher pour dezoomer
         {
             
             animator.SetBool("Lean", true);
             Debug.Log("Lean :" + Lean);
             
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("Back", true);
             animator.SetBool("Lean", false);
