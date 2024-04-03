@@ -7,13 +7,9 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
 
-    private bool isGamePaused;
+    public static bool isGamePaused;
 
-   public void Start()
-    {
-        isGamePaused = false;
-    }
-
+   
     public void PauseGame()
     {
         pauseMenu.gameObject.SetActive(true);
@@ -29,7 +25,8 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused)
             {
@@ -47,11 +44,13 @@ public class PauseMenu : MonoBehaviour
     public void OnResumeButton()
     {
         ContinueGame();
+        Debug.Log("RESUME");
     }
     //called when we click the "Quit" button
     public void OnQuitButton()
     {
         Application.Quit();
+        Debug.Log("QUIIIIIIIIIT");
     }
 
     

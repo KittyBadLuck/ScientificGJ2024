@@ -8,14 +8,13 @@ public class CameraAnimation : MonoBehaviour
     public Animator animator;
 
     private bool Lean;
-    private bool Back;
+    
     
     // Start is called before the first frame update
     void Start()
     { 
         animator = gameObject.GetComponent<Animator>();
         Lean = false;
-        Back = false;
         Debug.Log(Lean);
 
     }
