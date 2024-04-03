@@ -40,24 +40,27 @@ public class Master_Dialogues : MonoBehaviour
     {
         CleanView(); 
         // Continue gets the next line of the story
-        string text = story.Continue();
-        List<string> lineTags = story.currentTags;
-        if (lineTags.Count  > 0) {
-            if(lineTags.Contains("kai"))
+        if(story.canContinue)
+        {
+            string text = story.Continue();
+            List<string> lineTags = story.currentTags;
+            if (lineTags.Count > 0)
             {
-                SetTalkerName("Kai");
+                if (lineTags.Contains("kai"))
+                {
+                    SetTalkerName("Kai");
+                }
+                else if (lineTags.Contains("you"))
+                {
+                    SetTalkerName("You");
+                }
             }
-            else if (lineTags.Contains("you"))
-            {
-                SetTalkerName("You");
-            }
+            // This removes any white space from the text.
+            text = text.Trim();
+            // Display the text on screen!
+            CreateContentView(text);
         }
-        // This removes any white space from the text.
-        text = text.Trim();
-        // Display the text on screen!
-        CreateContentView(text);
-
-
+      
 
         // Display all the choices, if there are any!
         if (story.currentChoices.Count > 0)
