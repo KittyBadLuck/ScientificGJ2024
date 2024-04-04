@@ -23,6 +23,7 @@ public class Master_Dialogues : MonoBehaviour
 
     //bool safeties
     private bool _canPass = true;
+    public bool isWoman = false;
 
     public void StartStory(TextAsset storyJSONAsset)
     {
@@ -61,7 +62,10 @@ public class Master_Dialogues : MonoBehaviour
                     case "name_select":
                         ChooseName();
                         break;
-
+                    case "man":
+                        isWoman = false; break;
+                    case "woman":
+                        isWoman = true; break;  
                     default:
                         break;
                 }

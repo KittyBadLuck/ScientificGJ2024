@@ -3772,6 +3772,9 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c90612ba7bee2f34ca586edef462d7cb, type: 3}
   - {fileID: 4900000, guid: 42b89df1341d1704c83965b28b27ad56, type: 3}
   - {fileID: 4900000, guid: 5a2cd34b8121a6c418fbd10906603107, type: 3}
+  - {fileID: 4900000, guid: ffaa36c7f4cbf5c45ae7687d939631d9, type: 3}
+  - {fileID: 4900000, guid: 18588addb634a8a4fa73298b57fa5c8e, type: 3}
+  - {fileID: 4900000, guid: 47bc3f63a2a24cd46859c00c02d5afa4, type: 3}
   - {fileID: 4900000, guid: 664f64d8412f9aa41801b11dda678dbd, type: 3}
   - {fileID: 4900000, guid: 47bc3f63a2a24cd46859c00c02d5afa4, type: 3}
   cameraAnimControl: {fileID: 6946552858707609415}
