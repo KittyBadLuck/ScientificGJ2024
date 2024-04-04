@@ -9,6 +9,7 @@ using TMPro;
 
 public class Master_Dialogues : MonoBehaviour
 {
+    public GameManager gameManager;
     public static event Action<Story> OnCreateStory;
     public Story story;
 
@@ -34,7 +35,6 @@ public class Master_Dialogues : MonoBehaviour
     {
         _canPass = false;
         chooseNameParent.SetActive(true);
-        print("choose name");
     }
 
     void RefreshView()
@@ -77,9 +77,11 @@ public class Master_Dialogues : MonoBehaviour
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
+                print(i);
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim(), i);
                 // Tell the button what to do when we press it
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(delegate
                 {
                     OnClickChoiceButton(choice);
@@ -114,6 +116,7 @@ public class Master_Dialogues : MonoBehaviour
     // When we click the choice button, tell the story to choose that choice!
     void OnClickChoiceButton(Choice choice)
     {
+        
         story.ChooseChoiceIndex(choice.index);
         RefreshView();
     }
@@ -137,7 +140,7 @@ public class Master_Dialogues : MonoBehaviour
 
     void EndDialogues()
     {
-        print("End");
+        gameManager.EndStory();
         this.gameObject.SetActive(false);
 
     }
@@ -153,9 +156,6 @@ public class Master_Dialogues : MonoBehaviour
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
         choiceText.text = text;
 
-        // Make the button expand to fit the text
-        HorizontalLayoutGroup layoutGroup = choice.GetComponent<HorizontalLayoutGroup>();
-        layoutGroup.childForceExpandHeight = false;
 
         return choice;
     }
