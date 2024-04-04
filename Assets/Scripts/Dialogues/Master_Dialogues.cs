@@ -91,7 +91,6 @@ public class Master_Dialogues : MonoBehaviour
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
-                print(i);
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim(), i);
                 // Tell the button what to do when we press it
