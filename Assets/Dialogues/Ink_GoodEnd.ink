@@ -8,10 +8,11 @@
 	- You notice that the sprite is not glitched
 	- 'I think it was like this in the original game too, it's not a bug ' # you
 - 'A prince then ? Well I guess it's a surprise! Are you not too disapointed? ' # kai
-- You feel his gaze upon you, you don't know where to look... 
+- You feel his curious gaze upon you, you don't know where to look... 
 - 'About that...' # you
 * [Tell him]
-	- You start talking, but the words fails you. Yet you feel his arm around you
+	'I'm not disapointed! I think I like the prince, not like... romantic. Like, I enjoy playing the knight or-'
+	- You start talking, but the words fails you, your throat blocked by emotions. Yet you feel his arm around you
 	- 'It's okay, I know. You were never very discreet you know? ' # kai
 	- You laugh, nervous, or relieved.
 	** [Kiss him]
