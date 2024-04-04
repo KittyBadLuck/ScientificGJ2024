@@ -3,7 +3,12 @@ guid: 922bede8911bf8a4f9cfd33dae30333e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LampMetal
+    second: {fileID: 2100000, guid: 803af5c2d9807f144a9b06c9e0a719e4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
