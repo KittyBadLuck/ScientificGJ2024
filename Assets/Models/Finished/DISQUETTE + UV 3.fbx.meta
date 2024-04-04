@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 6f585df6f301dfe4cbb4fed732c4dfd9
+guid: 1acc0058a920feb4eb6b2e375d5de2f7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: disquette_texture1
+    second: {fileID: 2100000, guid: 1d3863d210582764288a8ea8d907e895, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
