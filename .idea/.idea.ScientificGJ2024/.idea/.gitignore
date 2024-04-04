@@ -2,8 +2,8 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.ScientificGJ2024.iml
 /modules.xml
+/.idea.ScientificGJ2024.iml
 /contentModel.xml
 /projectSettingsUpdater.xml
 # Editor-based HTTP Client requests
