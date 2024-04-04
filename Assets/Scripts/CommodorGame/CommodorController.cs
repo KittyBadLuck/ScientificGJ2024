@@ -15,6 +15,7 @@ using GameObject = UnityEngine.GameObject;
 
 public class CommodorController : MonoBehaviour
 {
+    // /////////
     // CONSTANTS
     [Header("Constants")]
     public int GAME_STAGE = 0;
@@ -28,13 +29,13 @@ public class CommodorController : MonoBehaviour
     public GameObject _texteZone;
     public List<Button> _actionButtons;
     public bool helpTextShow = true;
+    public GameObject swapper;
 
     [Header("NPCs & Enemies")] 
     public List<GameObject> npc;
 
     //public Material backgroundMaterial;
     [Header("Backgrounds")] 
-    public GameObject bgBlack;
     public GameObject bgPannel;
     private Color[] _comColorlist = new [] {
         new Color(0,0,0, 255), //0..0
@@ -55,12 +56,17 @@ public class CommodorController : MonoBehaviour
         new Color(255,255,255, 255) //100..1
     };
 
-    // VARS
+    // ///////////
+    // VARS PLAYER
     [Header("Player")]
     public bool isGenderMale;
     private String playerName;
     public float PIXEL_SPEED = 1f;
+    private Vector3 _downScreen = new Vector3(0f, -1f, 0f);
 
+    
+    // //////////
+    // ESSENTIALS
     private void Awake()
     {
         _texteZone.SetActive(false);
@@ -74,8 +80,6 @@ public class CommodorController : MonoBehaviour
         {
             entity.SetActive(false);
         }
-        bgBlack.SetActive(false);
-        bgPannel.SetActive(true);
     }
 
     void Update()
@@ -88,6 +92,8 @@ public class CommodorController : MonoBehaviour
         UpdatePlayer();
     }
 
+    
+    // ////////
     // UPDATERS
     void UpdateMenus()
     {
@@ -109,7 +115,7 @@ public class CommodorController : MonoBehaviour
             case 3: // GAME RULE, "know yourself. make the decision you fell right with..."
                 Destroy(comUI[2]);
                 
-                helpTextShow = Math.Sin(Time.time * 2.33) > 0 ? true : false;
+                helpTextShow = Math.Sin(Time.time * 3.33) > 0 ? true : false;
                 comUI[4].SetActive(helpTextShow);
                 comUI[3].SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -119,24 +125,13 @@ public class CommodorController : MonoBehaviour
                 break;
             
             case 4: // GAME START
-                bgBlack.SetActive(true);
-                bgPannel.SetActive(false);
+                if (GAME_PANNEL == 0) GAME_PANNEL = 1;
+                if (GAME_PANNEL == 6) Destroy(swapper);
                 _player.SetActive(true);
                 _texteZone.SetActive(true);
                 Destroy(comUI[3]);
                 Destroy(comUI[4]);
                 break;
-        }
-    }
-
-    void UpdatePannel()
-    {
-        switch (GAME_PANNEL)
-        {
-            case 0: // ICONIC PURPLE BACKGROUND
-                
-                break;
-            
         }
     }
 
@@ -154,6 +149,8 @@ public class CommodorController : MonoBehaviour
         _player.transform.position += move;
     }
 
+    
+    // /////////////////////
     // BUTTON ACTION CALLING
     void UpdateGAMESTAGE(int n = 1)
     {
@@ -167,6 +164,11 @@ public class CommodorController : MonoBehaviour
         }
     }
 
+    public void SwapPannel()
+    {
+        GAME_PANNEL++;
+        putPlayerDown();
+    }
     
     public void ButtonPressed(int buttonID)
     {
@@ -182,21 +184,18 @@ public class CommodorController : MonoBehaviour
             case 911:
                 //NORMAL
                 isGenderMale = true;
-                Debug.Log("PLAYER presses without hesitation");
                 UpdateGAMESTAGE();
                 break;
             
             case 912:
                 //HESITATE, THEN PRESS
                 isGenderMale = false;
-                Debug.Log("PLAYER hesitating but presses the Female Button");
                 UpdateGAMESTAGE();
                 break;
             
             case 913:
                 // NAME BUGS
                 playerName = (string)comUI[2].GetComponent<TMP_InputField>().text;
-                Debug.Log($"Input name = {playerName}");
                 UpdateGAMESTAGE();
                 break;
         }
@@ -205,6 +204,11 @@ public class CommodorController : MonoBehaviour
     public int GetPannel()
     {
         return GAME_PANNEL;
+    }
+
+    public void putPlayerDown()
+    {
+        _player.transform.position = _downScreen;
     }
     
 }

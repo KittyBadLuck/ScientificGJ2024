@@ -6,17 +6,18 @@ using UnityEngine;
 public class PannelController : MonoBehaviour
 {
     public GameObject backgroundObject;
-    public List<Material> texterList;
-    private Material _bg;
+    public List<Material> textureList;
+    private Renderer _renderer;
     public CommodorController _comGM;
 
     private void Awake()
     {
-        _bg = backgroundObject.GetComponent<Material>();
+        _renderer = backgroundObject.GetComponent<Renderer>(); 
     }
 
     private void Update()
     {
-        _bg = texterList[_comGM.GetPannel()];
+        _renderer.material = textureList[_comGM.GetPannel()];
     }
+    
 }

@@ -6,35 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c7122c37-0f7a-4906-a45a-49e41f69fd90" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ScientificGJ2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ScientificGJ2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/CommodorSprite.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/CommodorSprite.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/CommodoreScreen_Background.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/CommodoreScreen_Background.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Test_Player.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Test_Player.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/test.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/test.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CommodorGame.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CommodorGame/CommodorGameMASTER.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CommodorGame/CommodorGameMASTER.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CommodorGame/EnemyPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CommodorGame/EnemyPrefab.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Val_Dev-Commodore_RPG.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Val_Dev-Commodore_RPG.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/CommodorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/CommodorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/PlayerPoop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/PlayerPoop.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-DangerMauveTriangle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-DangerMauveTriangle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-GenericIMG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-GenericIMG.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-HeIsACreep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/ENEMY-HeIsACreep.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/PLAYER-Generic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CommodorGame/PLAYER-Generic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/VOID-Empty.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CommodorGame/VOID-Empty.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VFX/Glitch/VFX_Glitch.vfx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VFX/Glitch/VFX_Glitch.vfx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/PannelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/PannelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CommodorGame/pannel2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +25,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CommodorGame/AllyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CommodorGame/PannelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CommodorGame/PlayerCollisionDetextion.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,7 +117,7 @@
       <updated>1712153262398</updated>
       <workItem from="1712153265519" duration="6886000" />
       <workItem from="1712187773523" duration="9000" />
-      <workItem from="1712260748482" duration="3511000" />
+      <workItem from="1712260748482" duration="6238000" />
     </task>
     <servers />
   </component>
