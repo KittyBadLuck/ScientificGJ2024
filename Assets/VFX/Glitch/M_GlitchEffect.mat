@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5592396794010388139
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_GlitchEffect
+  m_Shader: {fileID: -6465566751694194690, guid: ddb9106a98db22949bd2392db18f6c4b,
+    type: 3}
+  m_ValidKeywords:
+  - _ALPHACLIP_ON
+  - _GLITCH_ENABLE
+  m_InvalidKeywords:
+  - _GLITCH_DISABLE
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Glitch_Mask:
+        m_Texture: {fileID: 2800000, guid: 2023ddb4841b89e47ad1f4ae84e724be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ddcef9e4196165141bd98b9b92d345c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_23f1d492b89c4d7e908928287968f2ac_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 71d59564212082c4db6311fcb21fbf4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_be256b7ed0764627b703ac460bac0453_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 71d59564212082c4db6311fcb21fbf4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_67b8183255764276bcde88d644ae49a8_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 2023ddb4841b89e47ad1f4ae84e724be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7edb74df3ea545cd925977d90ee250fd_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 71d59564212082c4db6311fcb21fbf4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8c7f59964f8f45ce9dfaa94347a3868f_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 71d59564212082c4db6311fcb21fbf4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ALPHACLIP: 1
+    - _AlphaClip: 1
+    - _AlphaClip_Treshold: 1
+    - _Blend: 0
+    - _CastShadows: 1
+    - _Cull: 2
+    - _Dither_Size: 0.4
+    - _DstBlend: 0
+    - _GLITCH_DISABLE: 1
+    - _GLITCH_ENABLE: 1
+    - _GlitchStrength: 0.75
+    - _Glitch_Disable: 1
+    - _Glitch_Displacement_Intensity: 0.045
+    - _Glitch_Enable: 1
+    - _Glitch_Noise_Amount: 32
+    - _Noise_Amount: 128
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    m_Colors:
+    - _GlitchColor: {r: 0.84993124, g: 1.905765, b: 2.2712452, a: 1}
+    - _Glitch_Pattern: {r: 1, g: 3, b: 0, a: 0}
+    - _Glitch_Pattern_Ratio: {r: 1, g: 24, b: 0, a: 0}
+  m_BuildTextureStacks: []
