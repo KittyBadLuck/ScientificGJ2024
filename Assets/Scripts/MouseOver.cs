@@ -10,9 +10,7 @@ public class MouseOver : MonoBehaviour
     public static bool isOpen;
     public Behaviour player;
     [SerializeField] private GameObject Notebook;
-
-   
-   
+    public bool canOpen = false;
    
     public void PauseGame()
     {
@@ -37,37 +35,39 @@ public class MouseOver : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canOpen) 
         {
-            
-            if (isOpen)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                ContinueGame();
-                Debug.Log("notebook close rn");
-            } 
-            else
-            {
-                PauseGame();
-                Debug.Log("notebook open rn");
-            }
-        
-            
+                if (isOpen)
+                {
+                    ContinueGame();
+                    Debug.Log("notebook close rn");
+                }
+                else
+                {
+                    PauseGame();
+                    Debug.Log("notebook open rn");
+                }
 
+            }
         }
+       
     }
 
 
     void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
+        if (canOpen){ pressE.gameObject.SetActive(true); }
         
-        
+
 
     }
 
     void OnMouseExit()
     {
-        pressE.gameObject.SetActive(false);
+        if (canOpen) { pressE.gameObject.SetActive(false); }
         //The mouse is no longer hovering over the GameObject so output this message each frame
     }  
 }

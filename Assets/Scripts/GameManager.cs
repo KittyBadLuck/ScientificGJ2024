@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public CameraControl cameraControl;
 
     public int goodEndThreshold = 4;
+    public MouseOver mouseOver;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cameraAnimControl.canLean = false;
+        mouseOver.canOpen = false;
     }
 
     public void EndStory()
@@ -76,12 +78,8 @@ public class GameManager : MonoBehaviour
         cameraAnimControl.canLean = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        mouseOver.canOpen = true;
         cameraControl.inDialogue = false;
 
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
