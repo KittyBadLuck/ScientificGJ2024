@@ -1,6 +1,4 @@
 ﻿
-
-
 - As you press start, you hear the door open. Your boyfriend, Kai, enters the room. 
 - As he stand next to you, you are faced with two options.
 - Kai is watching you, and you feel a little nervous
@@ -36,7 +34,7 @@
 
 === choose_name ===
 - You now have to choose a name
-- Enter your name # name_select
+- Enter your name # name_select # c64
 - Once you click on the button validate, you see the text change to some gibberish characters
 - 'Well, looks like you found your first problem!' # kai
 - 'I will leave you to your report, see you later!' # kai
