@@ -23,8 +23,6 @@ Material:
   m_Name: M_LavaLamp
   m_Shader: {fileID: -6465566751694194690, guid: bc969b293e4cba741ad52804178062bc,
     type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -33,7 +31,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -85,5 +82,5 @@ Material:
     - _Speed_X: -0.1
     - _Speed_Y: 9.45
     m_Colors:
-    - _Bubbles_Color: {r: 4, g: 0.84705883, b: 0, a: 1}
+    - _Bubbles_Color: {r: 3.9999995, g: 0.85863864, b: 0, a: 1}
   m_BuildTextureStacks: []
