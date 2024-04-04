@@ -24,6 +24,7 @@ public class Master_Dialogues : MonoBehaviour
     //bool safeties
     private bool _canPass = true;
     public bool isWoman = false;
+    public float goodEndPoints = 0;
 
     public void StartStory(TextAsset storyJSONAsset)
     {
@@ -68,6 +69,15 @@ public class Master_Dialogues : MonoBehaviour
                         isWoman = true; break;  
                     default:
                         break;
+                }
+
+                if (lineTags.Contains("minus"))
+                {
+                    goodEndPoints--;
+                }
+                else if (lineTags.Contains("bonus"))
+                {
+                    goodEndPoints++;
                 }
             }
             // This removes any white space from the text.

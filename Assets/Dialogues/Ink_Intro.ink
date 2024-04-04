@@ -9,10 +9,11 @@
 === woman_option ===
 - You hesitate , before clicking on the option.
 - 'A princess to save another?' # kai
-* 'She is still a knight' # you
-* [Change your mind] -> man_option
+* 'She is still a knight' # you # bonus
+* [Change your mind] -> man_option 
 * [Don't answer]
-    '...maybe I should leave you to it' # kai
+    '...maybe I should leave you to it' # kai #minus
+-You choose the woman # woman
 
 - -> choose_name
 
@@ -20,12 +21,12 @@
 - You click on the option.
 'You chose a man again?' # kai
 * [Change your mind] -> woman_option
-    'It was just to test the option' # you
+    'It was just to test the option' # you # minus
 * 'Why not ?' # you
-    'It doesn't change much, I just wanted to' # you
+    'It doesn't change much, I just wanted to' # you # bonus
 * [Don't answer]
-    '...maybe I should leave you to it' # kai
-    
+    '...maybe I should leave you to it' # kai # minus
+-You choose the man # man
 - -> choose_name
 
 === choose_name ===
