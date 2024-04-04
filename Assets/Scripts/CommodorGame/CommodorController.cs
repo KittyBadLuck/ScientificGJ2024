@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.IMGUI.Controls;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class CommodorController : MonoBehaviour
@@ -16,16 +19,16 @@ public class CommodorController : MonoBehaviour
     
     // COMPONENTS
     // public GameManager _gameManager;
-    public GameObject _startButton;
-    public GameObject _actionMenu;
-    public GameObject _genderAssignementSelection;
+    
+    public List<GameObject> obl;
     public GameObject _player;
     public GameObject _texteZone;
-    private BoxCollider _playerCollider;
     public List<Button> _actionButtons;
+    public bool helpTextShow = true;
     
     // VARS
     public bool isGenderMale;
+    private String playerName;
     // private bool _inMenu = false;
 
     
@@ -37,10 +40,11 @@ public class CommodorController : MonoBehaviour
     {
         _texteZone.SetActive(false);
         _player.SetActive(false);
-        _startButton.SetActive(true);
-        _actionMenu.SetActive(false);
-        _genderAssignementSelection.SetActive(false);
-        _playerCollider = _player.GetComponent<BoxCollider>();
+        obl[0].SetActive(true);
+        for (int i = 1; i < obl.Count; i++)
+        {
+           obl[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -58,16 +62,35 @@ public class CommodorController : MonoBehaviour
     {
         switch (GAME_STAGE)
         {
-            case 0:
+            case 0: // START BUTTON, Screen stop
                 break;
-            case 1:
-                _genderAssignementSelection.SetActive(true);
-                Destroy(_startButton);
+            
+            case 1: // GENDER SELECTION menu
+                obl[1].SetActive(true);
+                Destroy(obl[0]);
                 break;
-            case 2:
+            
+            case 2: // TYPE NAME
+                obl[2].SetActive(true);
+                Destroy(obl[1]);
+                break;
+            
+            case 3: // GAME RULE, "know yourself. make the decision you fell right with..."
+                Destroy(obl[2]);
+                
+                helpTextShow = Math.Sin(Time.time * 2.33) > 0 ? true : false;
+                obl[4].SetActive(helpTextShow);
+                obl[3].SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    UpdateGAMESTAGE();
+                }
+                break;
+            
+            case 4: // GAME START
                 _player.SetActive(true);
                 _texteZone.SetActive(true);
-                Destroy(_genderAssignementSelection);
+                Destroy(obl[3]);
                 break;
         }
     }
@@ -84,27 +107,6 @@ public class CommodorController : MonoBehaviour
         
         Vector3 move = new Vector3(xMove, yMove, 0);
         _player.transform.position += move;
-
-        // if (playerPose.x < -SCREEN_SIZE[0])
-        // {
-        //     playerPose = new Vector3(-8, playerPose.y, playerPose.z);
-        //     Debug.Log("brbrbr");
-        // }
-        // else if (playerPose.x > SCREEN_SIZE[0])
-        // {
-        //     playerPose = new Vector3(8, playerPose.y, playerPose.z);
-        //     Debug.Log("brbrbr");
-        // }
-        // if (playerPose.z < -SCREEN_SIZE[1])
-        // {
-        //     playerPose = new Vector3(playerPose.x, playerPose.y, -4);
-        //     Debug.Log("brbrbr");
-        // }
-        // else if (playerPose.z > SCREEN_SIZE[1])
-        // {
-        //     playerPose = new Vector3(playerPose.x, playerPose.y, 4);
-        //     Debug.Log("brbrbr");
-        // }
     }
 
     // BUTTON ACTION CALLING
@@ -145,7 +147,14 @@ public class CommodorController : MonoBehaviour
                 Debug.Log("PLAYER hestiating but presses the Female Button");
                 UpdateGAMESTAGE();
                 break;
+            
+            case 913:
+                // NAME BUGS
+                playerName = (string)obl[2].GetComponent<TMP_InputField>().text;
+                Debug.Log($"Input name = {playerName}");
+                UpdateGAMESTAGE();
+                break;
         }
     }
-    
+
 }
