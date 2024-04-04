@@ -10,15 +10,12 @@ using TMPro;
 public class Master_Dialogues : MonoBehaviour
 {
     public static event Action<Story> OnCreateStory;
-
-    [SerializeField]
-    private TextAsset _storyJSONAsset = null;
     public Story story;
 
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
 
-    //Option Buttons
+    //Option ButtonsW
     public Button[] buttonArray = null;
 
     public GameObject chooseNameParent = null;
@@ -26,16 +23,9 @@ public class Master_Dialogues : MonoBehaviour
     //bool safeties
     private bool _canPass = true;
 
-
-    // Start is called before the first frame update
-    void Awake()
+    public void StartStory(TextAsset storyJSONAsset)
     {
-        StartIntro();
-    }
-
-    void StartIntro()
-    {
-        story = new Story(_storyJSONAsset.text);
+        story = new Story(storyJSONAsset.text);
         if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
