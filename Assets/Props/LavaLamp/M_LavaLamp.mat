@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 03d0538de6e24c0f819bfc9ce084dfa9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Pattern01:
@@ -78,9 +78,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.06
+    - _Speed: 0.15
     - _Speed_X: -0.1
     - _Speed_Y: 9.45
     m_Colors:
-    - _Bubbles_Color: {r: 3.9999995, g: 0.85863864, b: 0, a: 1}
+    - _Bubbles_Color: {r: 3.9999995, g: 1.1099476, b: 0, a: 1}
   m_BuildTextureStacks: []
