@@ -10,20 +10,21 @@ public class CameraControl : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     float rotationX = 0;
+    public bool inDialogue = true;
     
     // Start is called before the first frame update
     void Start()
     {
         // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (!PauseMenu.isGamePaused)
+        if (!PauseMenu.isGamePaused && !inDialogue)
         {
             
             

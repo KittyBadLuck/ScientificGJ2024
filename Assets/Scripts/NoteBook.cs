@@ -3,16 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public class NoteBook : MonoBehaviour
 {
-    private InputField inputField;
+    [SerializeField] private GameObject Notebook;
+    public InputField inputField;
+    public Text outputText;
 
     private void Start()
     {
         // Recherchez le InputField enfant du GameObject actuel
-        inputField = GetComponentInChildren<InputField>();
-
+        
         if (inputField == null)
         {
             Debug.LogError("InputField introuvable dans le GameObject ou ses enfants.");
@@ -21,13 +25,32 @@ public class NoteBook : MonoBehaviour
         {
             // Activer l'interaction avec l'InputField
             inputField.interactable = true;
+            
+            
         }
     }
+
+    
 
     // Méthode appelée lorsque le texte est modifié dans le champ de texte
     public void OnTextChange(string newText)
     {
+        newText = inputField.text;
+        
+        outputText.text = outputText.text + '\n' + newText;
+        
         // Vous pouvez utiliser newText comme vous le souhaitez, par exemple pour l'afficher dans la console
-        Debug.Log("Nouveau texte : " + newText);
+        Debug.Log(newText);
+        
     }
+
+    public void OnXButton()
+    {
+        Notebook.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        
+    }
+    
 }

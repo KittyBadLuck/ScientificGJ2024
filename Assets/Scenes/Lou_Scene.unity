@@ -546,7 +546,7 @@ PrefabInstance:
     - target: {fileID: 8661520497638071024, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8661520497638071028, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}

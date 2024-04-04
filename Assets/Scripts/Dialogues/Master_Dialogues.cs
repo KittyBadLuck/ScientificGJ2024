@@ -9,33 +9,26 @@ using TMPro;
 
 public class Master_Dialogues : MonoBehaviour
 {
+    public GameManager gameManager;
     public static event Action<Story> OnCreateStory;
-
-    [SerializeField]
-    private TextAsset _storyJSONAsset = null;
     public Story story;
 
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
 
-    //Option Buttons
+    //Option ButtonsW
     public Button[] buttonArray = null;
 
     public GameObject chooseNameParent = null;
 
     //bool safeties
     private bool _canPass = true;
+    public bool isWoman = false;
+    public float goodEndPoints = 0;
 
-
-    // Start is called before the first frame update
-    void Awake()
+    public void StartStory(TextAsset storyJSONAsset)
     {
-        StartIntro();
-    }
-
-    void StartIntro()
-    {
-        story = new Story(_storyJSONAsset.text);
+        story = new Story(storyJSONAsset.text);
         if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
@@ -44,7 +37,6 @@ public class Master_Dialogues : MonoBehaviour
     {
         _canPass = false;
         chooseNameParent.SetActive(true);
-        print("choose name");
     }
 
     void RefreshView()
@@ -71,9 +63,21 @@ public class Master_Dialogues : MonoBehaviour
                     case "name_select":
                         ChooseName();
                         break;
-
+                    case "man":
+                        isWoman = false; break;
+                    case "woman":
+                        isWoman = true; break;  
                     default:
                         break;
+                }
+
+                if (lineTags.Contains("minus"))
+                {
+                    goodEndPoints--;
+                }
+                else if (lineTags.Contains("bonus"))
+                {
+                    goodEndPoints++;
                 }
             }
             // This removes any white space from the text.
@@ -90,6 +94,7 @@ public class Master_Dialogues : MonoBehaviour
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim(), i);
                 // Tell the button what to do when we press it
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(delegate
                 {
                     OnClickChoiceButton(choice);
@@ -124,6 +129,7 @@ public class Master_Dialogues : MonoBehaviour
     // When we click the choice button, tell the story to choose that choice!
     void OnClickChoiceButton(Choice choice)
     {
+        
         story.ChooseChoiceIndex(choice.index);
         RefreshView();
     }
@@ -147,7 +153,7 @@ public class Master_Dialogues : MonoBehaviour
 
     void EndDialogues()
     {
-        print("End");
+        gameManager.EndStory();
         this.gameObject.SetActive(false);
 
     }
@@ -163,9 +169,6 @@ public class Master_Dialogues : MonoBehaviour
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
         choiceText.text = text;
 
-        // Make the button expand to fit the text
-        HorizontalLayoutGroup layoutGroup = choice.GetComponent<HorizontalLayoutGroup>();
-        layoutGroup.childForceExpandHeight = false;
 
         return choice;
     }
