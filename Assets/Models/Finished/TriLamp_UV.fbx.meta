@@ -3,7 +3,17 @@ guid: 85f8cddd197e1524bb679098ae4d3ca5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TriLampLight
+    second: {fileID: 2100000, guid: 945bfaab7cb30dc4a956583325e9ee2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TriLampMetal
+    second: {fileID: 2100000, guid: e3b363d8d7d06514e9367c1bc2d438fe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
