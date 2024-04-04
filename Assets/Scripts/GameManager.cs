@@ -15,20 +15,49 @@ public class GameManager : MonoBehaviour
     public CameraAnimation cameraAnimControl;
     public CameraControl cameraControl;
 
+    public int goodEndThreshold = 4;
+
     // Start is called before the first frame update
     void Start()
     {
         _dialogues = dialogueCanvas.GetComponent<Master_Dialogues>();
         _dialogues.gameManager = this;
-        StartIntro();
+        StartStory();
     }
 
-    void StartIntro()
+    void StartStory()
     {
+        switch (_scene)
+        {
+            case 5:
+                if (_dialogues.isWoman)
+                {
+                    _dialogues.StartStory(storyJSONassets[6]);
+                }
+                else
+                {
+                    _dialogues.StartStory(storyJSONassets[5]);
+                }
+                break;
+            case 8:
+                if (_dialogues.goodEndPoints >= goodEndThreshold)
+                {
+                    _dialogues.StartStory(storyJSONassets[8]);
+                }
+                else
+                {
+                _dialogues.StartStory(storyJSONassets[9]); 
+                }
+                break;
+            default:
+                _dialogues.StartStory(storyJSONassets[_scene]);
+                break;
+
+
+        }
         cameraControl.inDialogue = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        _dialogues.StartStory(storyJSONassets[0]);
         cameraAnimControl.canLean = false;
     }
 
@@ -36,11 +65,15 @@ public class GameManager : MonoBehaviour
     {
         switch (_scene)
         {
-             case 0:
-                cameraAnimControl.canLean = true;
+             case 5:
+                _scene = 7; break;
+             default:
                 _scene++;
                 break;
+
+
         }
+        cameraAnimControl.canLean = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         cameraControl.inDialogue = false;
