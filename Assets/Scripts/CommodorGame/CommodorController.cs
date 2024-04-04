@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -13,20 +14,39 @@ using UnityEngine.UI;
 
 public class CommodorController : MonoBehaviour
 {
-    // CONTANTS
+    // CONSTANTS
     public int GAME_STAGE = 0;
-    public Vector2 SCREEN_SIZE = new Vector2(7.99f, 3.99f);
-    
+    public int GAME_PANNEL = 0;
+
     // COMPONENTS
     // public GameManager _gameManager;
-    
-    public List<GameObject> obl;
+    public List<GameObject> comUI;
     public GameObject _player;
     public GameObject _texteZone;
     public List<Button> _actionButtons;
     public bool helpTextShow = true;
-    
-    // VARS
+
+    public Material backgroundMaterial;
+    private Color[] _comColorlist = new [] {
+        new Color(0,0,0), //0..0
+        new Color(103, 82, 0), //20..9
+        new Color(96, 96, 96), //38..11
+        new Color(153, 105, 45), //39..8
+        new Color(146, 74, 64), //41..2
+        new Color(72, 58, 170), //45..6
+        new Color(114, 177, 75), //49..5
+        new Color(147, 81, 182), //52..4
+        new Color(138, 138, 138), //54..12 
+        new Color(193, 129, 120), //61..10
+        new Color(132, 197, 204), //66..3
+        new Color(134, 122, 222), //67..14
+        new Color(213, 223, 124), //68..7
+        new Color(179,179,179), //70..15
+        new Color(179, 236, 145), //75..13
+        new Color(255,255,255) //100..1
+    };
+
+// VARS
     public bool isGenderMale;
     private String playerName;
     // private bool _inMenu = false;
@@ -40,10 +60,10 @@ public class CommodorController : MonoBehaviour
     {
         _texteZone.SetActive(false);
         _player.SetActive(false);
-        obl[0].SetActive(true);
-        for (int i = 1; i < obl.Count; i++)
+        comUI[0].SetActive(true);
+        for (int i = 1; i < comUI.Count; i++)
         {
-           obl[i].SetActive(false);
+           comUI[i].SetActive(false);
         }
     }
 
@@ -63,24 +83,25 @@ public class CommodorController : MonoBehaviour
         switch (GAME_STAGE)
         {
             case 0: // START BUTTON, Screen stop
+                backgroundMaterial.color = _comColorlist[11];
                 break;
             
             case 1: // GENDER SELECTION menu
-                obl[1].SetActive(true);
-                Destroy(obl[0]);
+                comUI[1].SetActive(true);
+                Destroy(comUI[0]);
                 break;
             
             case 2: // TYPE NAME
-                obl[2].SetActive(true);
-                Destroy(obl[1]);
+                comUI[2].SetActive(true);
+                Destroy(comUI[1]);
                 break;
             
             case 3: // GAME RULE, "know yourself. make the decision you fell right with..."
-                Destroy(obl[2]);
+                Destroy(comUI[2]);
                 
                 helpTextShow = Math.Sin(Time.time * 2.33) > 0 ? true : false;
-                obl[4].SetActive(helpTextShow);
-                obl[3].SetActive(true);
+                comUI[4].SetActive(helpTextShow);
+                comUI[3].SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     UpdateGAMESTAGE();
@@ -88,10 +109,22 @@ public class CommodorController : MonoBehaviour
                 break;
             
             case 4: // GAME START
+                backgroundMaterial.color = _comColorlist[0];
                 _player.SetActive(true);
                 _texteZone.SetActive(true);
-                Destroy(obl[3]);
+                Destroy(comUI[3]);
                 break;
+        }
+    }
+
+    void UpdatePannel()
+    {
+        switch (GAME_PANNEL)
+        {
+            case 0: // ICONIC PURPLE BACKGROUND
+                
+                break;
+            
         }
     }
 
@@ -150,11 +183,11 @@ public class CommodorController : MonoBehaviour
             
             case 913:
                 // NAME BUGS
-                playerName = (string)obl[2].GetComponent<TMP_InputField>().text;
+                playerName = (string)comUI[2].GetComponent<TMP_InputField>().text;
                 Debug.Log($"Input name = {playerName}");
                 UpdateGAMESTAGE();
                 break;
         }
     }
-
+    
 }
