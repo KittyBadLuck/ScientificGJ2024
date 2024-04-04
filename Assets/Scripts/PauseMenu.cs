@@ -32,7 +32,8 @@ public class PauseMenu : MonoBehaviour
             {
                 ContinueGame();
                 Debug.Log("Game should NOT be paused rn");
-            } else
+            } 
+            else
             {
                 PauseGame();
                 Debug.Log("Game should be paused rn");

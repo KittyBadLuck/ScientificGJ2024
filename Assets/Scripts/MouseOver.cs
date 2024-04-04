@@ -1,22 +1,68 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseOver : MonoBehaviour
 {
     [SerializeField] private GameObject pressE;
+    public static bool isOpen;
+    public Behaviour player;
+    [SerializeField] private GameObject Notebook;
 
-    [SerializeField] private GameObject inputField;
-    void OnMouseOver()
+   
+   
+   
+    public void PauseGame()
     {
-        pressE.gameObject.SetActive(true);
+        player.enabled = false;
+        Notebook.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+        isOpen = true;
+   
+    }
+    public void ContinueGame()
+    {
+        player.enabled = true;
+        Notebook.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        isOpen = false;
+    }
+
+
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            inputField.gameObject.SetActive(true);
-            Debug.Log("OPEN NOTEBOOK");
             
+            if (isOpen)
+            {
+                ContinueGame();
+                Debug.Log("notebook close rn");
+            } 
+            else
+            {
+                PauseGame();
+                Debug.Log("notebook open rn");
+            }
+        
+            
+
         }
+    }
+
+
+    void OnMouseOver()
+    {
         //If your mouse hovers over the GameObject with the script attached, output this message
+        
+        
+
     }
 
     void OnMouseExit()
