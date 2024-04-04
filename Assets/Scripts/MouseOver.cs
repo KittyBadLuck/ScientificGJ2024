@@ -42,12 +42,10 @@ public class MouseOver : MonoBehaviour
                 if (isOpen)
                 {
                     ContinueGame();
-                    Debug.Log("notebook close rn");
                 }
                 else
                 {
                     PauseGame();
-                    Debug.Log("notebook open rn");
                 }
 
             }
