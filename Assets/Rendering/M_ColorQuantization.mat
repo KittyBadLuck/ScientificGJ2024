@@ -52,9 +52,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dither_Intensity: 0.044
+    - _Dither_Intensity: 0.081
     - _Dither_Tiling: 1.5
-    - _Luminosity: 11.81
+    - _Luminosity: 5.9
+    - _Luminosity02: -0.2
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
