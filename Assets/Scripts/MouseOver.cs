@@ -11,9 +11,11 @@ public class MouseOver : MonoBehaviour
     public Behaviour player;
     [SerializeField] private GameObject Notebook;
     public bool canOpen = false;
+    public AudioManagerScene audioManagerScene;
    
     public void PauseGame()
     {
+        audioManagerScene.SFX_PageTurningPlay();
         player.enabled = false;
         Notebook.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -24,6 +26,7 @@ public class MouseOver : MonoBehaviour
     }
     public void ContinueGame()
     {
+        audioManagerScene.SFX_PageTurningPlay();
         player.enabled = true;
         Notebook.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;

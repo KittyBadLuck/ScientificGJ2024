@@ -2715,6 +2715,7 @@ MonoBehaviour:
   dialogueText: {fileID: 8661520497495009241}
   nameText: {fileID: 8661520495874367789}
   nameTextParent: {fileID: 2966989271956405350}
+  happyMaterial: {fileID: 2100000, guid: 84a54965adfb9374c942b58588958dcf, type: 2}
   buttonArray:
   - {fileID: 8661520495904909141}
   - {fileID: 8661520496672553123}

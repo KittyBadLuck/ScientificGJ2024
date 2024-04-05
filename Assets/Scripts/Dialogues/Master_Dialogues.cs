@@ -14,6 +14,8 @@ public class Master_Dialogues : MonoBehaviour
     public CommodorController commodorController;
     public static event Action<Story> OnCreateStory;
     public Story story;
+    public AudioManagerScene audioManagerScene;
+    public AudioManagerCommodore audioCommodore;
 
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
@@ -52,6 +54,7 @@ public class Master_Dialogues : MonoBehaviour
         // Continue gets the next line of the story
         if(story.canContinue)
         {
+            audioCommodore.SFX_TextWritingPlay();
             string text = story.Continue();
             List<string> lineTags = story.currentTags;
 
@@ -207,6 +210,7 @@ public class Master_Dialogues : MonoBehaviour
     {
         if(nameTMP.text != null)
         {
+            audioCommodore.SFX_MenuValidationPlay();
             if (goodEnd)
             {
                 commodorController.playerName = nameTMP.text;
@@ -222,6 +226,7 @@ public class Master_Dialogues : MonoBehaviour
                 RefreshView();
                 _canPass = true;
                 chooseNameParent.SetActive(false);
+                audioManagerScene.SFX_CorruptionPlay();
             }
            
 

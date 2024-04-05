@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public MouseOver mouseOver;
     public CameraAnimation cameraAnimControl;
     public CameraControl cameraControl;
-
+    public AudioManagerScene audioManagerScene;
+    public AudioManagerCommodore audioCommodore;
     /// COMPONENTS
     public PlayerInput playerInput;
     public GameObject player;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioCommodore.SFX_CommodoreMusicPlay();
         _dialogues = dialogueCanvas.GetComponent<Master_Dialogues>();
         playerInput = this.GetComponent<PlayerInput>();
         _dialogues.gameManager = this;
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 _dialogues.StartStory(storyJSONassets[0]);
+                audioManagerScene.SFX_DoorOpeningPlay();
                 commodorController.GAME_STAGE = 1;
                 break;
             case 4:
