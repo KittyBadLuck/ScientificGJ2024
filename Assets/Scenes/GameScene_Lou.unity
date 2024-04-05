@@ -3659,6 +3659,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1918063514680036373, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918063514680036373, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1918063515501344854, guid: 745264c0191c34447a13fa808f6b818d,
         type: 3}
       propertyPath: textureList.Array.size
@@ -3674,6 +3684,31 @@ PrefabInstance:
       propertyPath: textureList.Array.data[7]
       value: 
       objectReference: {fileID: 2100000, guid: 7a1ca9072ea58f24680ff321fa221d74, type: 2}
+    - target: {fileID: 2474958408088805747, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474958408088805747, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886967932771111477, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886967932771111477, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886967932771111477, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7886967932771111482, guid: 745264c0191c34447a13fa808f6b818d,
         type: 3}
       propertyPath: pannel
@@ -3683,6 +3718,26 @@ PrefabInstance:
         type: 3}
       propertyPath: pannel
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919951443037919869, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919951443037919869, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051330615274001408, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051330615274001408, guid: 745264c0191c34447a13fa808f6b818d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 745264c0191c34447a13fa808f6b818d, type: 3}
