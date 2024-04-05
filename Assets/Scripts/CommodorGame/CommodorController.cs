@@ -35,6 +35,7 @@ public class CommodorController : MonoBehaviour
 
     [Header("NPCs & Enemies")] 
     public List<GameObject> npc;
+    public GameObject currentNPC;
 
     //public Material backgroundMaterial;
     [Header("Backgrounds")] 
@@ -178,6 +179,7 @@ public class CommodorController : MonoBehaviour
              EnemyController npcControl = npcOBJ.GetComponent<EnemyController>();
              if (npcControl.pannel == GAME_PANNEL) 
              {
+                currentNPC = npcOBJ;
                 npcOBJ.SetActive(true);
              }
              else{

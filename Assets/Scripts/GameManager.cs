@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     /// Scripts references
-    public GameObject dialogueCanvas;
+
     public CommodorController commodorController;
     private Master_Dialogues _dialogues;
     public MouseOver mouseOver;
@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     /// COMPONENTS
     public PlayerInput playerInput;
     public GameObject player;
+    public GameObject dialogueCanvas;
+
 
     /// Stories stats
     public TextAsset[] storyJSONassets;

@@ -21,7 +21,7 @@
 
 ==== ally_dodge ====
 ‘You dodge the ?al🭵y’s attack and point your sword against his throat.’ # c64
-‘He looks puzzled. You decide to let him leave.’’  # c64
+‘He looks puzzled. You decide to let him leave.’’  # c64 # ally_happy
 ‘How generous of you my love !’ #kai # bonus
 ‘The path is clear to a tall tower laying north of here…’ # c64
 ‘The last step before ▚┤▃▃ng the princess.’ # c64
@@ -30,7 +30,7 @@
 
 ==== ally_parry ====
 ‘The shock of the metals is intense and the #lly]]’s rusted sword ends up breaking down.’ # c64
-‘You take the opportunity to slain him between the ribs. He falls dead.’ # c64
+‘You take the opportunity to slain him between the ribs. He falls dead.’ # c64 # ally_dead
 ‘What a murderous adventurer you are.’ #kai
 ‘Well my options are limited.’ #you # minus
 ‘The path is clear to a tall tower laying north of here…’ # c64

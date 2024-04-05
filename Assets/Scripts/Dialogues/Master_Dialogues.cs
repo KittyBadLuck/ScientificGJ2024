@@ -17,6 +17,8 @@ public class Master_Dialogues : MonoBehaviour
 
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
+    public GameObject nameTextParent = null;
+    public Material happyMaterial = null;
 
     //Option ButtonsW
     public Button[] buttonArray = null;
@@ -95,6 +97,15 @@ public class Master_Dialogues : MonoBehaviour
                 {
                     goodEndPoints++;
                 }
+
+                if(lineTags.Contains("ally_happy"))
+                {
+                    commodorController.currentNPC.GetComponent<MeshRenderer>().material = happyMaterial;
+                }
+                if (lineTags.Contains("ally_dead"))
+                {
+                    commodorController.currentNPC.SetActive(false);
+                }
             }
             // This removes any white space from the text.
             text = text.Trim();
@@ -126,7 +137,7 @@ public class Master_Dialogues : MonoBehaviour
     }
     void SetTalkerName(string name)
     {
-        nameText.gameObject.SetActive(true);
+        nameTextParent.gameObject.SetActive(true);
 
         nameText.text = name;
     }
@@ -137,7 +148,7 @@ public class Master_Dialogues : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
-        nameText.gameObject.SetActive(false);
+        nameTextParent.gameObject.SetActive(false);
         dialogueText.text = " ";
 
     }
