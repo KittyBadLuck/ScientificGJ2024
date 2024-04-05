@@ -37,9 +37,9 @@
 - Enter your name # name_select # c64
 - Once you click on the button validate, you see the text change to some gibberish characters
 - 'Well, looks like you found your first problem!' # kai
-- 'I will leave you to your report, see you later!' # kai
-- He kisses you quickly, before leaving the room. 
+- 'You need to note it?' # kai
 - You are here to test this hack after all, still you are annoyed to find a bug so early. 
+- 'Yes, I have my notebook here...' # you
 - Write down when you found corrupted parts!
 
 - -> END
