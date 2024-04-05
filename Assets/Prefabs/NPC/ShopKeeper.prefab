@@ -113,7 +113,7 @@ MonoBehaviour:
   self: {fileID: 5952962500331493620}
   ID: 0
   corrupted: 0
-  pannel: 1
+  pannel: 7
   position: {x: 0, y: 0}
   playerNear: 0
   hasTalked: 0

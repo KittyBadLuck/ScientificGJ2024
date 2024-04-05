@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7122c37-0f7a-4906-a45a-49e41f69fd90" name="Changes" comment="" />
+    <list default="true" id="c7122c37-0f7a-4906-a45a-49e41f69fd90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CommodorGame/Pannels/Pannel5.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/CommodorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CommodorGame/CommodorController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
