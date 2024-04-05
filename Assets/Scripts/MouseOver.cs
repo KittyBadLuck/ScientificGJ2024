@@ -37,7 +37,7 @@ public class MouseOver : MonoBehaviour
     {
         if (canOpen) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (isOpen)
                 {

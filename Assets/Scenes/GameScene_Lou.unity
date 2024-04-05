@@ -3296,7 +3296,7 @@ PrefabInstance:
     - target: {fileID: 8661520495948525147, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8661520495948525148, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
@@ -3442,7 +3442,7 @@ PrefabInstance:
     - target: {fileID: 8661520496194436749, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -107
       objectReference: {fileID: 0}
     - target: {fileID: 8661520496194436750, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
@@ -3523,7 +3523,7 @@ PrefabInstance:
     - target: {fileID: 8661520496262064546, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -189
       objectReference: {fileID: 0}
     - target: {fileID: 8661520496262064547, guid: 7781ee918543238499f9aafaa08a76e1,
         type: 3}
@@ -3942,6 +3942,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8661520497638071029, guid: 7781ee918543238499f9aafaa08a76e1,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1317248285}
+    - target: {fileID: 8661520497638071029, guid: 7781ee918543238499f9aafaa08a76e1,
+        type: 3}
+      propertyPath: commodorController
+      value: 
+      objectReference: {fileID: 182106447}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7781ee918543238499f9aafaa08a76e1, type: 3}
 --- !u!224 &1132769497 stripped

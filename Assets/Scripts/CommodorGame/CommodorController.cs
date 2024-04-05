@@ -62,8 +62,8 @@ public class CommodorController : MonoBehaviour
     public bool isGenderMale;
     public String playerName;
     public float PIXEL_SPEED = 1f;
-    private Vector3 _downScreen = new Vector3(0f, -1f, 0f);
-
+    private Vector3 _downScreen = new Vector3(0f, -1f, -4f);
+    public bool canMove = true;
     
     // //////////
     // ESSENTIALS
@@ -89,7 +89,9 @@ public class CommodorController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdatePlayer();
+
+          UpdatePlayer();
+
     }
 
     
@@ -208,7 +210,7 @@ public class CommodorController : MonoBehaviour
 
     public void putPlayerDown()
     {
-        _player.transform.position = _downScreen;
+        _player.transform.localPosition = _downScreen;
     }
     
 }

@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
 
         }
+        commodorController.canMove = false;
         cameraControl.inDialogue = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -79,9 +80,8 @@ public class GameManager : MonoBehaviour
              default:
                 _scene++;
                 break;
-
-
         }
+        commodorController.canMove = true;
         cameraAnimControl.canLean = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

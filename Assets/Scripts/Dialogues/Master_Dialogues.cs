@@ -67,9 +67,13 @@ public class Master_Dialogues : MonoBehaviour
                         ChooseName();
                         break;
                     case "man":
-                        isWoman = false; break;
+                        isWoman = false; 
+                        commodorController.isGenderMale = true;
+                        break;
                     case "woman":
-                        isWoman = true; break;  
+                        isWoman = true; 
+                        commodorController.isGenderMale = false;
+                        break;
                     default:
                         break;
                 }

@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Mail;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class CameraAnimation : MonoBehaviour
 {
-    
-    
+
     public Animator animator;
-    
-    
-    
-    
-    
+
     private bool isLean;
+    public bool canLean = false;
     
     
     // Start is called before the first frame update
@@ -22,37 +20,37 @@ public class CameraAnimation : MonoBehaviour
     { 
         
         isLean = false;
-        Debug.Log(isLean);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Space)) //maintenir Space pour Zoomer puis relacher pour dezoomer
+        if ( canLean && Time.timeScale != 0)
         {
-            
-            if (isLean)
-            {
-                
-                isLean = false;
-                animator.SetBool("Lean", false);
-                animator.SetBool("Back", true);
-                Debug.Log("player back rn");
-                
-            } 
-            else
+            if (Input.GetKeyDown(KeyCode.Space)) //maintenir Space pour Zoomer puis relacher pour dezoomer
             {
 
-                isLean = true;
-                animator.SetBool("Lean", true);
-                animator.SetBool("Back", false);
-                Debug.Log("player lean rn");
+                if (isLean)
+                {
+
+                    isLean = false;
+                    animator.SetBool("Lean", false);
+                    animator.SetBool("Back", true);
+
+                }
+                else
+                {
+
+                    isLean = true;
+                    animator.SetBool("Lean", true);
+                    animator.SetBool("Back", false);
+                }
+
+
             }
-            
-            
         }
+       
         
     }
 
