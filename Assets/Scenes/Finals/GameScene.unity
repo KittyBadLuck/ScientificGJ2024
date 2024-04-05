@@ -5822,6 +5822,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: RENDERING_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1662803770024784284, guid: e3390498fa0f7d1458ec662ad7aaa97a,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662803770024784284, guid: e3390498fa0f7d1458ec662ad7aaa97a,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662803770024784284, guid: e3390498fa0f7d1458ec662ad7aaa97a,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5346354974659380493, guid: e3390498fa0f7d1458ec662ad7aaa97a,
         type: 3}
       propertyPath: m_Camera
@@ -5850,7 +5865,7 @@ PrefabInstance:
     - target: {fileID: 9143244508502977100, guid: e3390498fa0f7d1458ec662ad7aaa97a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9143244508502977100, guid: e3390498fa0f7d1458ec662ad7aaa97a,
         type: 3}
@@ -6956,7 +6971,7 @@ PrefabInstance:
     - target: {fileID: 8875475388797876915, guid: 757a05284f9ad12418e9baece161075a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8875475388797876915, guid: 757a05284f9ad12418e9baece161075a,
         type: 3}
@@ -6966,7 +6981,7 @@ PrefabInstance:
     - target: {fileID: 8875475388797876915, guid: 757a05284f9ad12418e9baece161075a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.556
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 8875475388797876915, guid: 757a05284f9ad12418e9baece161075a,
         type: 3}
