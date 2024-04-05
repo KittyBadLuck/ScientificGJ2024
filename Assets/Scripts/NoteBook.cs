@@ -38,9 +38,7 @@ public class NoteBook : MonoBehaviour
         newText = inputField.text;
         
         outputText.text = outputText.text + '\n' + newText;
-        
-        // Vous pouvez utiliser newText comme vous le souhaitez, par exemple pour l'afficher dans la console
-        Debug.Log(newText);
+       
         
     }
 

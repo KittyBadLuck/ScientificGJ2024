@@ -3,7 +3,12 @@ guid: 6e7431e3b4fdb3348978f275b022eaa1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BOUTEILLE_TEXTURE
+    second: {fileID: 2100000, guid: a903a98418534b44b853d51c1926da52, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

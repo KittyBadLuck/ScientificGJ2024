@@ -39,15 +39,9 @@ public class MouseOver : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (isOpen)
-                {
-                    ContinueGame();
-                    Debug.Log("notebook close rn");
-                }
-                else
+                if (!isOpen)
                 {
                     PauseGame();
-                    Debug.Log("notebook open rn");
                 }
 
             }
