@@ -7,30 +7,36 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    /// Scripts references
     public GameObject dialogueCanvas;
     public CommodorController commodorController;
     private Master_Dialogues _dialogues;
-    public GameObject player;
-
-    public TextAsset[] storyJSONassets;
-    private int _scene = 0;
-
+    public MouseOver mouseOver;
     public CameraAnimation cameraAnimControl;
     public CameraControl cameraControl;
 
+    /// COMPONENTS
+    private PlayerInput _playerInput;
+    public GameObject player;
+
+    /// Stories stats
+    public TextAsset[] storyJSONassets;
+    private int _scene = 0;
     public int goodEndThreshold = 4;
-    public MouseOver mouseOver;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _dialogues = dialogueCanvas.GetComponent<Master_Dialogues>();
+        _playerInput = this.GetComponent<PlayerInput>();
         _dialogues.gameManager = this;
         StartStory();
     }
 
-    void StartStory()
+    public void StartStory()
     {
+        _playerInput.SwitchCurrentActionMap("Dialogues");
         switch (_scene)
         {
             case 0:
@@ -87,8 +93,10 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         mouseOver.canOpen = true;
         cameraControl.inDialogue = false;
+        _playerInput.SwitchCurrentActionMap("Game");
 
     }
+
 
     public void UpdateField(TMP_InputField originField)
     {

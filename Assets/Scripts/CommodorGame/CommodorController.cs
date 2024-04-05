@@ -30,6 +30,7 @@ public class CommodorController : MonoBehaviour
     public List<Button> _actionButtons;
     public bool helpTextShow = true;
     public GameObject swapper;
+    public GameManager gameManager;
 
     [Header("NPCs & Enemies")] 
     public List<GameObject> npc;
@@ -92,6 +93,14 @@ public class CommodorController : MonoBehaviour
 
           UpdatePlayer();
 
+    }
+
+    public void Interact()
+    {
+        if (GAME_STAGE == 4 )
+        {
+            gameManager.StartStory();
+        }
     }
 
     

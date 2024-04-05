@@ -4678,6 +4678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 975175933}
   commodorController: {fileID: 182106447}
+  mouseOver: {fileID: 6946552858518256263}
+  cameraAnimControl: {fileID: 6946552858707609415}
+  cameraControl: {fileID: 6946552859074686797}
   player: {fileID: 6946552859074686798}
   storyJSONassets:
   - {fileID: 4900000, guid: fc30ee825d1716b41b52a76fe1d46329, type: 3}
@@ -4690,10 +4693,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 47bc3f63a2a24cd46859c00c02d5afa4, type: 3}
   - {fileID: 4900000, guid: 664f64d8412f9aa41801b11dda678dbd, type: 3}
   - {fileID: 4900000, guid: 47bc3f63a2a24cd46859c00c02d5afa4, type: 3}
-  cameraAnimControl: {fileID: 6946552858707609415}
-  cameraControl: {fileID: 6946552859074686797}
   goodEndThreshold: 4
-  mouseOver: {fileID: 6946552858518256263}
 --- !u!114 &1317248286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4736,6 +4736,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7c63a2e6-1f6c-42cf-b5a2-f57f119db9fd
     m_ActionName: Dialogues/PassDialogues[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0a47f900-03b0-48b7-9edd-7fbb446cbac5
+    m_ActionName: Game/Interact[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Dialogues
@@ -6032,8 +6048,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0128598, y: 0.020000003, z: 0.012349894}
-  m_Center: {x: 0.0012587637, y: 0, z: 0.0005672766}
+  m_Size: {x: 0.0128598, y: 0.007684081, z: 0.011401437}
+  m_Center: {x: 0.0012587635, y: -0.0061579705, z: 0.00009305248}
 --- !u!1001 &1748642430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8547,7 +8563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6946552858707609420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.023}
+  m_LocalPosition: {x: 0, y: 0, z: -0.023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
