@@ -149,7 +149,6 @@ public class CommodorController : MonoBehaviour
             
             case 4: // GAME START
                 if (GAME_PANNEL == 0) GAME_PANNEL = 1;
-                if (GAME_PANNEL == 6) Destroy(swapper);
                 _player.SetActive(true);
                 _texteZone.SetActive(true);
                 Destroy(comUI[3]);
