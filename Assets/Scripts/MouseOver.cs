@@ -39,11 +39,7 @@ public class MouseOver : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (isOpen)
-                {
-                    ContinueGame();
-                }
-                else
+                if (!isOpen)
                 {
                     PauseGame();
                 }

@@ -6,15 +6,19 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Master_Dialogues : MonoBehaviour
 {
     public GameManager gameManager;
+    public CommodorController commodorController;
     public static event Action<Story> OnCreateStory;
     public Story story;
 
     public TMP_Text dialogueText = null;
     public TMP_Text nameText = null;
+    public GameObject nameTextParent = null;
+    public Material happyMaterial = null;
 
     //Option ButtonsW
     public Button[] buttonArray = null;
@@ -24,7 +28,9 @@ public class Master_Dialogues : MonoBehaviour
     //bool safeties
     private bool _canPass = true;
     public bool isWoman = false;
+    private bool goodEnd = false;
     public float goodEndPoints = 0;
+
 
     public void StartStory(TextAsset storyJSONAsset)
     {
@@ -37,6 +43,7 @@ public class Master_Dialogues : MonoBehaviour
     {
         _canPass = false;
         chooseNameParent.SetActive(true);
+        commodorController.GAME_STAGE = 2;
     }
 
     void RefreshView()
@@ -64,9 +71,20 @@ public class Master_Dialogues : MonoBehaviour
                         ChooseName();
                         break;
                     case "man":
-                        isWoman = false; break;
+                        isWoman = false; 
+                        commodorController.isGenderMale = true;
+                        break;
                     case "woman":
-                        isWoman = true; break;  
+                        isWoman = true; 
+                        commodorController.isGenderMale = false;
+                        break;
+                    case "good_end":
+                        ChooseName();
+                        goodEnd = true;
+                        break;
+                    case "bad_end":
+                        BadEnd();
+                        break;
                     default:
                         break;
                 }
@@ -78,6 +96,15 @@ public class Master_Dialogues : MonoBehaviour
                 else if (lineTags.Contains("bonus"))
                 {
                     goodEndPoints++;
+                }
+
+                if(lineTags.Contains("ally_happy"))
+                {
+                    commodorController.currentNPC.GetComponent<MeshRenderer>().material = happyMaterial;
+                }
+                if (lineTags.Contains("ally_dead"))
+                {
+                    commodorController.currentNPC.SetActive(false);
                 }
             }
             // This removes any white space from the text.
@@ -110,7 +137,7 @@ public class Master_Dialogues : MonoBehaviour
     }
     void SetTalkerName(string name)
     {
-        nameText.gameObject.SetActive(true);
+        nameTextParent.gameObject.SetActive(true);
 
         nameText.text = name;
     }
@@ -121,7 +148,7 @@ public class Master_Dialogues : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
-        nameText.gameObject.SetActive(false);
+        nameTextParent.gameObject.SetActive(false);
         dialogueText.text = " ";
 
     }
@@ -150,7 +177,10 @@ public class Master_Dialogues : MonoBehaviour
 
     }
 
-
+    private void BadEnd()
+    {
+        SceneManager.LoadScene(2);
+    }
     void EndDialogues()
     {
         gameManager.EndStory();
@@ -177,9 +207,23 @@ public class Master_Dialogues : MonoBehaviour
     {
         if(nameTMP.text != null)
         {
-            print("Make Name Bug");
-            _canPass = true;
-            chooseNameParent.SetActive(false);
+            if (goodEnd)
+            {
+                commodorController.playerName = nameTMP.text;
+                SceneManager.LoadScene(2);
+                
+            }
+            else
+            {
+                print("Make Name Bug");
+                nameTMP.text = "E3#&&))";
+                commodorController.playerName = "E3#&&))";
+                commodorController.GAME_STAGE = 3;
+                RefreshView();
+                _canPass = true;
+                chooseNameParent.SetActive(false);
+            }
+           
 
         }
     }

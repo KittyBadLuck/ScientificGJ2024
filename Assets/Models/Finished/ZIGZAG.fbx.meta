@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 0fc8802802002b44ba62fe40eda85a50
+guid: 72847a5d541590a4e9fd410de702371c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZIG_ZAG_TEXTURE1
+    second: {fileID: 2100000, guid: 7d543d5a943337e4683c77d8dd6c34f8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

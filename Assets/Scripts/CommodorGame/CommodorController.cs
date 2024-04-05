@@ -12,6 +12,7 @@ using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using GameObject = UnityEngine.GameObject;
+using UnityEngine.InputSystem;
 
 public class CommodorController : MonoBehaviour
 {
@@ -30,9 +31,11 @@ public class CommodorController : MonoBehaviour
     public List<Button> _actionButtons;
     public bool helpTextShow = true;
     public GameObject swapper;
+    public GameManager gameManager;
 
     [Header("NPCs & Enemies")] 
     public List<GameObject> npc;
+    public GameObject currentNPC;
 
     //public Material backgroundMaterial;
     [Header("Backgrounds")] 
@@ -60,10 +63,10 @@ public class CommodorController : MonoBehaviour
     // VARS PLAYER
     [Header("Player")]
     public bool isGenderMale;
-    private String playerName;
+    public String playerName;
     public float PIXEL_SPEED = 1f;
-    private Vector3 _downScreen = new Vector3(0f, -1f, 0f);
-
+    private Vector3 _downScreen = new Vector3(0f, -1f, -4f);
+    public bool canMove = true;
     
     // //////////
     // ESSENTIALS
@@ -85,11 +88,31 @@ public class CommodorController : MonoBehaviour
     void Update()
     {
         UpdateMenus();
+        UpdateNPC();
     }
 
     private void FixedUpdate()
     {
-        UpdatePlayer();
+
+          UpdatePlayer();
+
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            EnemyController npcControl = npc[GAME_PANNEL - 2].GetComponent<EnemyController>();
+            if(npcControl.playerNear && !npcControl.hasTalked)
+            {
+                if (GAME_STAGE == 4)
+                {
+
+                    gameManager.StartStory();
+                }
+            }
+        }
+      
     }
 
     
@@ -147,6 +170,22 @@ public class CommodorController : MonoBehaviour
         
         Vector3 move = new Vector3(xMove, yMove, 0);
         _player.transform.position += move;
+    }
+
+    void UpdateNPC()
+    {
+        foreach (GameObject npcOBJ in npc)
+        {
+             EnemyController npcControl = npcOBJ.GetComponent<EnemyController>();
+             if (npcControl.pannel == GAME_PANNEL) 
+             {
+                currentNPC = npcOBJ;
+                npcOBJ.SetActive(true);
+             }
+             else{
+                npcOBJ.SetActive(false);
+            }
+        }
     }
 
     
@@ -208,7 +247,7 @@ public class CommodorController : MonoBehaviour
 
     public void putPlayerDown()
     {
-        _player.transform.position = _downScreen;
+        _player.transform.localPosition = _downScreen;
     }
     
 }

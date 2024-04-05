@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     public bool corrupted = false;
     public int pannel = 1;
     public Vector2 position= new Vector2(0f, 0f);
+    public bool playerNear;
+    public bool hasTalked;
 
     void Awake()
     {
@@ -27,16 +29,27 @@ public class EnemyController : MonoBehaviour
         _range = GetComponent<Collider>();
     }
 
+    void Update()
+    {
+        
+    }
+
     public virtual void Interract(int step)
     {
-        Debug.Log("We interracted cutie <3");
+        if ( playerNear)
+        {
+            Debug.Log("We interracted cutie <3");
+        }
+        
     }
 
     private void OnTriggerEnter(Collider player)
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            // _comGM
-        }
+        print("player is near");
+        playerNear = true;
+    }
+    private void OnTriggerExit(Collider player)
+    {
+        playerNear = false;
     }
 }

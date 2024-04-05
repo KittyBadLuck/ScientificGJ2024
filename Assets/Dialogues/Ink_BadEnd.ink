@@ -21,6 +21,7 @@
 * [Stop him]
 	- You can't , fearing his reactions, and not even knowing what you would say to him.
 	- The moment pass, and you are alone again in front of your game.
-	- You decide to report this finale bug, and close the game.
+	- You decide to report this finale bug, and close the game. 
+- End # bad_end
 
 - -> END

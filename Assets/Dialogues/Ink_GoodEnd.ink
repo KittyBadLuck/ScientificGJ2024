@@ -29,7 +29,7 @@
 	- You feel safe and warm, as you are faced with the character selection screen. 
 * [Click on "man"]
 	- You choose the option, without hesitation. You now have to choose a name.
-- You can now enter your name, and somehow, you know this will work this time. # name_select # end
+- You can now enter your name, and somehow, you know this will work this time. # good_end
 
 - -> END
 
