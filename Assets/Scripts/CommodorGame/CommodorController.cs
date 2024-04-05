@@ -60,7 +60,7 @@ public class CommodorController : MonoBehaviour
     // VARS PLAYER
     [Header("Player")]
     public bool isGenderMale;
-    private String playerName;
+    public String playerName;
     public float PIXEL_SPEED = 1f;
     private Vector3 _downScreen = new Vector3(0f, -1f, 0f);
 

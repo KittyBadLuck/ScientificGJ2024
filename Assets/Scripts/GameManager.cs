@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +33,10 @@ public class GameManager : MonoBehaviour
     {
         switch (_scene)
         {
+            case 0:
+                _dialogues.StartStory(storyJSONassets[0]);
+                commodorController.GAME_STAGE = 1;
+                break;
             case 5:
                 if (_dialogues.isWoman)
                 {
@@ -81,5 +88,14 @@ public class GameManager : MonoBehaviour
         mouseOver.canOpen = true;
         cameraControl.inDialogue = false;
 
+    }
+
+    public void UpdateField(TMP_InputField originField)
+    {
+
+        string name = originField.text;
+        TMP_InputField TMP_IF = commodorController.comUI[2].GetComponent<TMP_InputField>();
+        TMP_IF.interactable = true;
+        TMP_IF.text = name;
     }
 }

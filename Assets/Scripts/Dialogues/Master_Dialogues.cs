@@ -10,6 +10,7 @@ using TMPro;
 public class Master_Dialogues : MonoBehaviour
 {
     public GameManager gameManager;
+    public CommodorController commodorController;
     public static event Action<Story> OnCreateStory;
     public Story story;
 
@@ -26,6 +27,7 @@ public class Master_Dialogues : MonoBehaviour
     public bool isWoman = false;
     public float goodEndPoints = 0;
 
+
     public void StartStory(TextAsset storyJSONAsset)
     {
         story = new Story(storyJSONAsset.text);
@@ -37,6 +39,7 @@ public class Master_Dialogues : MonoBehaviour
     {
         _canPass = false;
         chooseNameParent.SetActive(true);
+        commodorController.GAME_STAGE = 2;
     }
 
     void RefreshView()
@@ -178,6 +181,10 @@ public class Master_Dialogues : MonoBehaviour
         if(nameTMP.text != null)
         {
             print("Make Name Bug");
+            nameTMP.text = "E3#&&))";
+            commodorController.playerName = nameTMP.text;
+            commodorController.GAME_STAGE = 3;
+            RefreshView();
             _canPass = true;
             chooseNameParent.SetActive(false);
 
