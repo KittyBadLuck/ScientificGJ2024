@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShopKeeper_MATERIAL 1
+  m_Name: Ally_Sadge_MATERIAL
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 5a37ac00e3d39334db51a5477a03caad, type: 3}
+        m_Texture: {fileID: 2800000, guid: bac5e4c67f9537e44af49b93cf9510f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
