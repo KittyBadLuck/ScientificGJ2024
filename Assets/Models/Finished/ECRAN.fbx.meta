@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Models/Finished/CommodoreScreen.fbx.meta
-guid: a8b657de207a3aa429a3b28f58a358d3
-========
-guid: 934939d8b9d89df4fb68545ba0dc68d1
->>>>>>>> ulysse:Assets/Models/Finished/ECRAN.fbx.meta
+guid: bba0630900920894d831e9ee0412ec20
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SQuelette_ecran_texture
+    second: {fileID: 2100000, guid: e9e4847539294bb43b6088cc58cb51a9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
