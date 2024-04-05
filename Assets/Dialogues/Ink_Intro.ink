@@ -8,11 +8,11 @@
 === woman_option ===
 - You hesitate , before clicking on the option.
 - 'A princess to save another?' # kai
-* 'She is still a knight' # you # bonus
-	- You hear him laugh a little.
-	- 'Good point' # kai
-* [Change your mind] -> man_option 
-* [Don't answer]
+	* 'She is still a knight' # you # bonus
+		 You hear him laugh a little.
+		 'Good point' # kai
+	* [Change your mind] -> man_option 
+	* [Don't answer]
     '...maybe I should leave you to it' # kai #minus
 -You choose the woman # woman
 

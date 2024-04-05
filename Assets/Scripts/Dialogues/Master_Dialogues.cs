@@ -186,7 +186,7 @@ public class Master_Dialogues : MonoBehaviour
         {
             print("Make Name Bug");
             nameTMP.text = "E3#&&))";
-            commodorController.playerName = nameTMP.text;
+            commodorController.playerName = "E3#&&))";
             commodorController.GAME_STAGE = 3;
             RefreshView();
             _canPass = true;

@@ -12,6 +12,7 @@ using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using GameObject = UnityEngine.GameObject;
+using UnityEngine.InputSystem;
 
 public class CommodorController : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class CommodorController : MonoBehaviour
     void Update()
     {
         UpdateMenus();
+        UpdateNPC();
     }
 
     private void FixedUpdate()
@@ -95,12 +97,21 @@ public class CommodorController : MonoBehaviour
 
     }
 
-    public void Interact()
+    public void Interact(InputAction.CallbackContext context)
     {
-        if (GAME_STAGE == 4 )
+        if(context.performed)
         {
-            gameManager.StartStory();
+            EnemyController npcControl = npc[GAME_PANNEL - 2].GetComponent<EnemyController>();
+            if(npcControl.playerNear && !npcControl.hasTalked)
+            {
+                if (GAME_STAGE == 4)
+                {
+
+                    gameManager.StartStory();
+                }
+            }
         }
+      
     }
 
     
@@ -158,6 +169,21 @@ public class CommodorController : MonoBehaviour
         
         Vector3 move = new Vector3(xMove, yMove, 0);
         _player.transform.position += move;
+    }
+
+    void UpdateNPC()
+    {
+        foreach (GameObject npcOBJ in npc)
+        {
+             EnemyController npcControl = npcOBJ.GetComponent<EnemyController>();
+             if (npcControl.pannel == GAME_PANNEL) 
+             {
+                npcOBJ.SetActive(true);
+             }
+             else{
+                npcOBJ.SetActive(false);
+            }
+        }
     }
 
     

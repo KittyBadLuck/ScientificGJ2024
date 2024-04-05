@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public CameraControl cameraControl;
 
     /// COMPONENTS
-    private PlayerInput _playerInput;
+    public PlayerInput playerInput;
     public GameObject player;
 
     /// Stories stats
@@ -29,34 +29,41 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _dialogues = dialogueCanvas.GetComponent<Master_Dialogues>();
-        _playerInput = this.GetComponent<PlayerInput>();
+        playerInput = this.GetComponent<PlayerInput>();
         _dialogues.gameManager = this;
         StartStory();
     }
 
     public void StartStory()
     {
-        _playerInput.SwitchCurrentActionMap("Dialogues");
+        playerInput.SwitchCurrentActionMap("Dialogues");
+        dialogueCanvas.SetActive(true);
+        commodorController.canMove = false;
+        cameraControl.inDialogue = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        cameraAnimControl.canLean = false;
+        mouseOver.canOpen = false;
         switch (_scene)
         {
             case 0:
                 _dialogues.StartStory(storyJSONassets[0]);
                 commodorController.GAME_STAGE = 1;
                 break;
-            case 5:
+            case 4:
                 if (_dialogues.isWoman)
-                {
-                    _dialogues.StartStory(storyJSONassets[6]);
-                }
-                else
                 {
                     _dialogues.StartStory(storyJSONassets[5]);
                 }
+                else
+                {
+                    _dialogues.StartStory(storyJSONassets[4]);
+                }
                 break;
-            case 8:
+            case 7:
                 if (_dialogues.goodEndPoints >= goodEndThreshold)
                 {
-                    _dialogues.StartStory(storyJSONassets[8]);
+                    _dialogues.StartStory(storyJSONassets[7]);
                 }
                 else
                 {
@@ -69,12 +76,7 @@ public class GameManager : MonoBehaviour
 
 
         }
-        commodorController.canMove = false;
-        cameraControl.inDialogue = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        cameraAnimControl.canLean = false;
-        mouseOver.canOpen = false;
+
     }
 
     public void EndStory()
@@ -93,7 +95,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         mouseOver.canOpen = true;
         cameraControl.inDialogue = false;
-        _playerInput.SwitchCurrentActionMap("Game");
+        playerInput.SwitchCurrentActionMap("Game");
 
     }
 
