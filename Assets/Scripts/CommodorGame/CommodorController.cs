@@ -4,8 +4,13 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
+
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
+
+#endif
+
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
