@@ -3,7 +3,12 @@ guid: bb4b7e388d663e346b8bec10b864f268
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CABLE_TEXTURE
+    second: {fileID: 2100000, guid: fe482e05fb2b64c4ca12120005fc75d2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

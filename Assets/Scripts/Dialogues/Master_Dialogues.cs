@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Master_Dialogues : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Master_Dialogues : MonoBehaviour
     //bool safeties
     private bool _canPass = true;
     public bool isWoman = false;
+    private bool goodEnd = false;
     public float goodEndPoints = 0;
 
 
@@ -73,6 +75,13 @@ public class Master_Dialogues : MonoBehaviour
                     case "woman":
                         isWoman = true; 
                         commodorController.isGenderMale = false;
+                        break;
+                    case "good_end":
+                        ChooseName();
+                        goodEnd = true;
+                        break;
+                    case "bad_end":
+                        BadEnd();
                         break;
                     default:
                         break;
@@ -157,7 +166,10 @@ public class Master_Dialogues : MonoBehaviour
 
     }
 
-
+    private void BadEnd()
+    {
+        SceneManager.LoadScene(2);
+    }
     void EndDialogues()
     {
         gameManager.EndStory();
@@ -184,13 +196,23 @@ public class Master_Dialogues : MonoBehaviour
     {
         if(nameTMP.text != null)
         {
-            print("Make Name Bug");
-            nameTMP.text = "E3#&&))";
-            commodorController.playerName = nameTMP.text;
-            commodorController.GAME_STAGE = 3;
-            RefreshView();
-            _canPass = true;
-            chooseNameParent.SetActive(false);
+            if (goodEnd)
+            {
+                commodorController.playerName = nameTMP.text;
+                SceneManager.LoadScene(2);
+                
+            }
+            else
+            {
+                print("Make Name Bug");
+                nameTMP.text = "E3#&&))";
+                commodorController.playerName = "E3#&&))";
+                commodorController.GAME_STAGE = 3;
+                RefreshView();
+                _canPass = true;
+                chooseNameParent.SetActive(false);
+            }
+           
 
         }
     }

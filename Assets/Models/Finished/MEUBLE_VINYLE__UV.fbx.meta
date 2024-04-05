@@ -3,7 +3,12 @@ guid: 8f03369b1b5ce86418723c2a6e621049
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MEUBLE_VINYLE_TEXTURE
+    second: {fileID: 2100000, guid: b50d6771ac87d214cb81142ce05647b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

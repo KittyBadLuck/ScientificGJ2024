@@ -3,7 +3,12 @@ guid: b44efc25ecd6f904f9f8abf955762516
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PAQUET_CIGARETTE_TEXTURE
+    second: {fileID: 2100000, guid: 69b4512069d9fb6488432e205a807d5f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
