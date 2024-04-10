@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.ComponentModel.Design;
 
 public class Master_Dialogues : MonoBehaviour
 {
@@ -25,13 +26,28 @@ public class Master_Dialogues : MonoBehaviour
     //Option ButtonsW
     public Button[] buttonArray = null;
 
+    //backgrounds
+    [Header("Backgrounds Images")]
     public GameObject chooseNameParent = null;
+    public Image textBackground = null;
+    public RawImage nameBackground = null;
 
     //bool safeties
     private bool _canPass = true;
     public bool isWoman = false;
     private bool goodEnd = false;
     public float goodEndPoints = 0;
+
+    //Colors for text
+    [Header("Colors")]
+    public Color commodorPrimColor;
+    public Color commodorSecColor;
+    public Color kaiPrimColor;
+    public Color kaiSecColor;
+    public Color charaPrimColor;
+    public Color charaSecColor;
+    public Color envColor;
+
 
 
     public void StartStory(TextAsset storyJSONAsset)
@@ -56,60 +72,7 @@ public class Master_Dialogues : MonoBehaviour
         {
             audioCommodore.SFX_TextWritingPlay();
             string text = story.Continue();
-            List<string> lineTags = story.currentTags;
-
-            if (lineTags.Count > 0)
-            {
-                switch (lineTags[0])
-                {
-                    case "kai":
-                        SetTalkerName("Kai");
-                        break;
-
-                    case "you":
-                    SetTalkerName("You");
-                        break;
-
-                    case "name_select":
-                        ChooseName();
-                        break;
-                    case "man":
-                        isWoman = false; 
-                        commodorController.isGenderMale = true;
-                        break;
-                    case "woman":
-                        isWoman = true; 
-                        commodorController.isGenderMale = false;
-                        break;
-                    case "good_end":
-                        ChooseName();
-                        goodEnd = true;
-                        break;
-                    case "bad_end":
-                        BadEnd();
-                        break;
-                    default:
-                        break;
-                }
-
-                if (lineTags.Contains("minus"))
-                {
-                    goodEndPoints--;
-                }
-                else if (lineTags.Contains("bonus"))
-                {
-                    goodEndPoints++;
-                }
-
-                if(lineTags.Contains("ally_happy"))
-                {
-                    commodorController.currentNPC.GetComponent<MeshRenderer>().material = happyMaterial;
-                }
-                if (lineTags.Contains("ally_dead"))
-                {
-                    commodorController.currentNPC.SetActive(false);
-                }
-            }
+            CheckTags();
             // This removes any white space from the text.
             text = text.Trim();
             // Display the text on screen!
@@ -232,4 +195,85 @@ public class Master_Dialogues : MonoBehaviour
 
         }
     }
+
+    public void CheckTags()
+    {
+        List<string> lineTags = story.currentTags;
+        bool isEnv = true;
+
+        if (lineTags.Count > 0)
+        {
+            switch (lineTags[0])
+            {
+                case "kai":
+                    SetTalkerName("Kai");
+                    textBackground.color = kaiPrimColor;
+                    nameBackground.color = kaiSecColor;
+                    isEnv = false;
+                    break;
+
+                case "you":
+                    SetTalkerName("You");
+                    textBackground.color = charaPrimColor;
+                    nameBackground.color = charaSecColor;
+                    isEnv = false;
+                    break;
+                case "c64":
+                    SetTalkerName("Commodore");
+                    textBackground.color = commodorPrimColor;
+                    nameBackground.color = commodorSecColor;
+                    isEnv = false;
+                    break;
+
+                case "name_select":
+                    ChooseName();
+                    break;
+                case "man":
+                    isWoman = false;
+                    commodorController.isGenderMale = true;
+                    break;
+                case "woman":
+                    isWoman = true;
+                    commodorController.isGenderMale = false;
+                    break;
+                case "good_end":
+                    ChooseName();
+                    goodEnd = true;
+                    break;
+                case "bad_end":
+                    BadEnd();
+                    break;
+                default:
+                    break;
+            }
+
+            if (lineTags.Contains("minus"))
+            {
+                goodEndPoints--;
+            }
+            else if (lineTags.Contains("bonus"))
+            {
+                goodEndPoints++;
+            }
+
+            if (lineTags.Contains("ally_happy"))
+            {
+                commodorController.currentNPC.GetComponent<MeshRenderer>().material = happyMaterial;
+            }
+            if (lineTags.Contains("ally_dead"))
+            {
+                commodorController.currentNPC.SetActive(false);
+            }
+            if (isEnv)
+            {
+                textBackground.color = envColor;
+            }
+            
+        }
+        else
+        {
+            textBackground.color = envColor;
+        }
+    }
+
 }
