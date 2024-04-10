@@ -4,17 +4,17 @@
 'Or maybe an ally this time! ' # kai
 -You click to launch the interaction
 
-‘Fellow gentleman knight ! Let me follow you in your quest, I’m your ally. ’ # c64
+‘Fellow gentleman knight ! Let me follow you in your quest, I’m your ally. ’ # c64 
 ‘Please don’t slay him !’ #kai
-‘I’m your a🭰ly.’ # c64
+‘I’m your a🭰ly.’ # c64 
 ‘What kind of ally exactly...?’ #you
-‘I’% your 🭱lly’  # c64
+‘I’% your 🭱lly’  # c64 
 ‘Well I get it, come and slash some dragons with me already !’ #you
-‘I’m your al├y’ # c64
+‘I’m your al├y’ # c64 
 ‘Hmmm, that doesn’t sound right.’ #you 
-‘Did you thi▖k you c♦uld lie so easily to m╳ ?’
+‘Did you thi▖k you c♦uld lie so easily to m╳ ?’ 
 ‘Wow do you have a history with him that I should know about ?’ #kai
-‘┼ will destroy you for hiding your true s▃▃f to me┐’  # c64
+‘┼ will destroy you for hiding your true s▃▃f to me┐’  # c64 
 * [Dodge attack] -> ally_dodge
 * [Parry] -> ally_parry
 

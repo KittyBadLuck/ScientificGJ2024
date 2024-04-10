@@ -1,13 +1,13 @@
 ﻿- Your character push forward, as you hear Kai entering the room, and sitting next to you.
-‘A sorceress is facing you, she detected you from the distance and is ready to charge towards you.’
-* [Attack] -> sorceress_attack
+‘A sorceress is facing you, she detected you from the distance and is ready to charge towards you.’ # c64
+* [Attack] -> sorceress_attack 
 * [Negociate] -> sorceress_negociate
 
 
 ===sorceress_attack===
 ‘Well witches are sexy but they aren’t necessarily bad no ?’ # kai # minus
 ‘Until they turn you into a frog !’ # you 
-‘▃┴🭷🭷her🭷🭷╮▘♠+**’ 
+‘▃┴🭷🭷her🭷🭷╮▘♠+**’ # c64 # witch
 ‘Damn, this game is super buggy, now we’ll never know if she’s nice or not !’ # kai
 ‘Well a friend copied this hacked version so I guess you have to expect this sort of things ?’ # you
 ‘Hacked ? Could they modify it ?’ #kai
@@ -18,7 +18,7 @@
 ===sorceress_negociate===
 ‘Hey again dear ! Well that’s a weird option ! But I’m always down for some non-violence.’ # kai # malus
 ‘You introduce yourself and state that your intentions are to rescue a princess, not start war with the witch-kind.’
-‘▃┴🭷🭷her🭷🭷╮▘♠+**’
+‘▃┴🭷🭷her🭷🭷╮▘♠+**’  # c64 # witch
 ‘Another bug ?’ # kai
 ‘Well a friend copied this hacked version so I guess you have to expect this sort of things ?’ # you
 ‘At least she doesn’t seem to hurt you...’ # kai

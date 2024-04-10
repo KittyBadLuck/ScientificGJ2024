@@ -178,7 +178,6 @@ public class Master_Dialogues : MonoBehaviour
             {
                 commodorController.playerName = nameTMP.text;
                 SceneManager.LoadScene(2);
-                
             }
             else
             {
@@ -247,6 +246,8 @@ public class Master_Dialogues : MonoBehaviour
                     break;
             }
 
+            // Check for bonus or malus
+
             if (lineTags.Contains("minus"))
             {
                 goodEndPoints--;
@@ -256,6 +257,7 @@ public class Master_Dialogues : MonoBehaviour
                 goodEndPoints++;
             }
 
+            // Check if Ally is happy
             if (lineTags.Contains("ally_happy"))
             {
                 commodorController.currentNPC.GetComponent<MeshRenderer>().material = happyMaterial;
@@ -264,13 +266,27 @@ public class Master_Dialogues : MonoBehaviour
             {
                 commodorController.currentNPC.SetActive(false);
             }
-            if (isEnv)
+
+            //Change Background color to envColor if no other speaker is detected
+            if (isEnv) { textBackground.color = envColor; }
+
+
+            //sound check
+            if (lineTags.Contains("steal"))
             {
-                textBackground.color = envColor;
+                audioCommodore.SFX_StealingPlay();
             }
-            
+            else if (lineTags.Contains("buy")) { 
+                audioCommodore.SFX_PurchasingPlay(); 
+            }
+
+            if (lineTags.Contains("witch"))
+            {
+                audioCommodore.SFX_WitchSpeakingPlay();
+            }
+
         }
-        else
+        else //no tag means its env speaking
         {
             textBackground.color = envColor;
         }
