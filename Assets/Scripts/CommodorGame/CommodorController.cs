@@ -173,6 +173,7 @@ public class CommodorController : MonoBehaviour
         float yMove = _vAxe * PIXEL_SPEED;
         
         Vector3 move = new Vector3(xMove, yMove, 0);
+
         _player.transform.position += move;
     }
 
