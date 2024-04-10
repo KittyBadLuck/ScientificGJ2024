@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
     public Vector2 position= new Vector2(0f, 0f);
     public bool playerNear;
     public bool hasTalked;
+    public int storyStage = 0;
 
     void Awake()
     {

@@ -107,10 +107,10 @@ public class CommodorController : MonoBehaviour
     {
         if(context.performed)
         {
-            EnemyController npcControl = npc[GAME_PANNEL - 2].GetComponent<EnemyController>();
+            EnemyController npcControl = currentNPC.GetComponent<EnemyController>();
             if(npcControl.playerNear && !npcControl.hasTalked)
             {
-                if (GAME_STAGE == 4)
+                if (GAME_STAGE == 4 && gameManager.scene == npcControl.storyStage)
                 {
 
                     gameManager.StartStory();
@@ -209,7 +209,9 @@ public class CommodorController : MonoBehaviour
 
     public void SwapPannel()
     {
-        GAME_PANNEL++;
+        if (currentNPC == null || currentNPC.GetComponent<EnemyController>().hasTalked){ 
+            GAME_PANNEL++; 
+        }
         putPlayerDown();
     }
     

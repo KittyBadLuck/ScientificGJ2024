@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     /// Stories stats
     public TextAsset[] storyJSONassets;
-    private int _scene = 0;
+    public int scene = 0;
     public int goodEndThreshold = 4;
 
 
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         cameraAnimControl.canLean = false;
         mouseOver.canOpen = false;
-        switch (_scene)
+        switch (scene)
         {
             case 0:
                 _dialogues.StartStory(storyJSONassets[0]);
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             default:
-                _dialogues.StartStory(storyJSONassets[_scene]);
+                _dialogues.StartStory(storyJSONassets[scene]);
                 break;
 
 
@@ -86,12 +86,12 @@ public class GameManager : MonoBehaviour
 
     public void EndStory()
     {
-        switch (_scene)
+        switch (scene)
         {
              case 5:
-                _scene = 7; break;
+                scene = 7; break;
              default:
-                _scene++;
+                scene++;
                 break;
         }
         commodorController.canMove = true;
