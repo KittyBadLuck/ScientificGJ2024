@@ -13,8 +13,9 @@
 		 'Good point' # kai
 	* [Change your mind] -> man_option 
 	* [Don't answer]
-    '...maybe I should leave you to it' # kai #minus
--You choose the woman # woman
+		Embarassed, you stay silent.
+    		'...maybe I should leave you to it' # kai #minus
+-You choose the woman # c64 # woman
 
 - -> choose_name
 
@@ -26,15 +27,34 @@
        'It was just to test the option' # you # minus
 	-> woman_option
 * 'Why not ?' # you
-    'It doesn't change much, I just wanted to try it' # you # bonus
+    	'It doesn't change much, I just wanted to try it' # you # bonus
 * [Don't answer]
-    '...as you prefer!' # kai # minus
--You choose the man # man
+	Embarassed, you stay silent.
+  	'...as you wish!' # kai # minus
+
+- -> bugged_man
+
+=== bugged_man ===
+- As you try to valide the option, you see that the game freezing for a couple of seconds , before reselecting the female option.
+- 'What ? it's not working!' # you
+- 'I guess it's some kind of error? ' # kai
+- 'It doesn't matter, you can still complete the game, right? '# kai
+* 'Still, It's the option I wanted.'
+	You resign yourself to click on the second option, after crossing your arms
+	You feel Kai put his arm around you, with a little laugh
+	'I know, I know, after that we will see if we can fix it don't worry' # kai # bonus
+* 'Right, it was just to test it...'
+	You click on the second option, trying to hide your disapointment.
+	By the look on his face, Kai saw right throught it, but choose not to comment at least.
+* [Stay silent and click]
+	You choose not to answer, annoyed, and click on the only remaining option. # minus
+
+-You choose the woman # c64 # woman
 - -> choose_name
 
 === choose_name ===
 - You now have to choose a name
-- Enter your name # name_select # c64
+- Enter your name # c64 # name_select 
 - Once you click on the button validate, you see the text change to some gibberish characters
 - 'Well, looks like you found your first problem!' # kai
 - 'You need to note it?' # kai

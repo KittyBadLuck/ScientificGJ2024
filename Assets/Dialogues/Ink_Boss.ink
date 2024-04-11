@@ -1,9 +1,7 @@
-﻿
-
+﻿- You enter the final room, and notice another small glitched sprite, but it looks in a better state than the rest.
 ‘You enter the tower where your final enemy awaits you.’ #c64
 ‘A muscular blue orc in shining black armor stands looking at you.’ #c64
 ‘A knight ? Has this creature eaten the princess maybe ?’ #kai
-‘Is it a metaphor maybe ?’ #kai
 ‘I think the game got corrupted in the copying process. Your friends always have bad quality disks anyway.’ #kai 
 ‘Disks are always cheap, and easily reproducible, it shouldn’t be the issue.’ #you
 ‘The orc raises his arm towards you threateningly.’

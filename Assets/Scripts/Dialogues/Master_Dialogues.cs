@@ -225,16 +225,16 @@ public class Master_Dialogues : MonoBehaviour
                     break;
 
                 case "name_select":
-                    ChooseName();
+                    
                     break;
-                case "man":
-                    isWoman = false;
-                    commodorController.isGenderMale = true;
-                    break;
-                case "woman":
-                    isWoman = true;
-                    commodorController.isGenderMale = false;
-                    break;
+                //case "man":
+                //    isWoman = false;
+                //    commodorController.isGenderMale = true;
+                //    break;
+                //case "woman":
+                //    isWoman = true;
+                //    commodorController.isGenderMale = false;
+                //    break;
                 case "good_end":
                     ChooseName();
                     goodEnd = true;
@@ -247,6 +247,13 @@ public class Master_Dialogues : MonoBehaviour
             }
 
             // Check for bonus or malus
+            if(lineTags.Contains("woman"))
+            {
+                isWoman = true;
+                commodorController.isGenderMale = false;
+            }
+
+            if(lineTags.Contains("name_select")){ ChooseName(); }
 
             if (lineTags.Contains("minus"))
             {
@@ -271,6 +278,7 @@ public class Master_Dialogues : MonoBehaviour
             if (isEnv) { textBackground.color = envColor; }
 
 
+
             //sound check
             if (lineTags.Contains("steal"))
             {
@@ -279,7 +287,6 @@ public class Master_Dialogues : MonoBehaviour
             else if (lineTags.Contains("buy")) { 
                 audioCommodore.SFX_PurchasingPlay(); 
             }
-
             if (lineTags.Contains("witch"))
             {
                 audioCommodore.SFX_WitchSpeakingPlay();
