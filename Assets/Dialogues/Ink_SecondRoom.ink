@@ -7,14 +7,24 @@
 === armor_buy ===
 ‘Hehehe, thank you.’  # c64  # bonus # buy
 ‘Wait, it doesn’t look anything like what was shown !’ # you
-‘I guess I’ll slay dragons in a metal bikini...’ # you
-
--> END
+'I think it is pretty at least ! you should keep it' # kai
+* [remove armor]
+	'No thanks. I will find a true armor later' # you # bonus
+	'A true armor for a true knight then, you're right' # kai
+	-> END
+* [keep it]
+	‘I guess I’ll slay dragons in a metal bikini...’ # you # minus
+	-> END
 
 === armor_steal ===
 ‘Hehehe, if you want it so much, just take it.’  # c64  # minus # steal
 ‘What a socialist seller.’ #you
 ‘Wait, it doesn’t look anything like what was shown !’ # you
 ‘Hmmm… Why am I the one who feels robbed ?’ #you
-
--> END
+* [remove armor]
+	'No thanks. I will find a true armor later' # you # bonus
+	'A true armor for a true knight then, you're right' # kai
+	-> END
+* [keep it]
+	‘I guess I’ll slay dragons in a metal bikini...’ # you # minus
+	-> END
