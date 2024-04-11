@@ -1,5 +1,6 @@
-﻿- Your character push forward, as you hear Kai entering the room, and sitting next to you.
+﻿- Your character push forward, and notice that the bug of the next enemy is a mess of random pixel.
 ‘A sorceress is facing you, she detected you from the distance and is ready to charge towards you.’ # c64
+- Remembering the type of armor you got, you are relieved to not know what kind of sprite  they should have been for a sorceress.
 * [Attack] -> sorceress_attack 
 * [Negociate] -> sorceress_negociate
 
@@ -17,7 +18,7 @@
 
 ===sorceress_negociate===
 ‘Hey again dear ! Well that’s a weird option ! But I’m always down for some non-violence.’ # kai # malus
-‘You introduce yourself and state that your intentions are to rescue a princess, not start war with the witch-kind.’
+‘You introduce yourself and state that your intentions are to rescue a princess, not start war with the witch-kind.’ # c64
 ‘▃┴🭷🭷her🭷🭷╮▘♠+**’  # c64 # witch
 ‘Another bug ?’ # kai
 ‘Well a friend copied this hacked version so I guess you have to expect this sort of things ?’ # you
