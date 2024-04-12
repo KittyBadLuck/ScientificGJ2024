@@ -4,9 +4,9 @@
 'Or maybe an ally this time! ' # kai
 -You click to launch the interaction
 
-‘My lady, I am here as your trustful servant, I’m your ally.’ # c64
+‘My lady, I am here as your trustful servant, I’m your ally.’ # c64 
 ‘Please don’t murder him !’ #kai
-‘I’m your al🭰y.’ # c64
+‘I’m your al🭰y.’ # c64 
 ‘An irreproachable one with that...’ #you
 ‘I’π yo○r a┐◤▒’ # c64
 ‘Will he join the party already ?’ #kai
