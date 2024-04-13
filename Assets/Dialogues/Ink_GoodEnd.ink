@@ -16,12 +16,11 @@
 	- 'It's okay, I know. You were never very discreet you know? ' # kai
 	- You laugh, nervous, or relieved.
 	** [Kiss him]
-		He kiss you bakc, his hand to your cheeks, before exchanging a smile.
+		He kiss you bakc, his hand to your cheeks, before exchanging a smile.-> restart
 	** [Lean back]
-		His arm tighten around you, and you feel him kiss your head
+		His arm tighten around you, and you feel him kiss your head-> restart
 	** [Hold his hand]
-		He squeeze your hand back, a smile on his face
--> restart
+		He squeeze your hand back, a smile on his face-> restart
 === restart === 
 - 'I am glad you told me. Why not restart the game? With me, this time? ' 
 * [Restart]
@@ -29,6 +28,7 @@
 	- You feel safe and warm, as you are faced with the character selection screen. 
 * [Click on "man"]
 	- You choose the option, without hesitation. You now have to choose a name.
+
 - You can now enter your name, and somehow, you know this will work this time. # good_end
 
 - -> END

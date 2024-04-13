@@ -223,10 +223,6 @@ public class Master_Dialogues : MonoBehaviour
                     nameBackground.color = commodorSecColor;
                     isEnv = false;
                     break;
-
-                case "name_select":
-                    
-                    break;
                 //case "man":
                 //    isWoman = false;
                 //    commodorController.isGenderMale = true;
@@ -253,7 +249,9 @@ public class Master_Dialogues : MonoBehaviour
                 commodorController.isGenderMale = false;
             }
 
-            if(lineTags.Contains("name_select")){ ChooseName(); }
+            if(lineTags.Contains("name_select")){ 
+                ChooseName(); 
+            }
 
             if (lineTags.Contains("minus"))
             {

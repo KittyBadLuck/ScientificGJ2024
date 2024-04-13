@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         cameraAnimControl.canLean = false;
         mouseOver.canOpen = false;
+
         switch (scene)
         {
             case 0:
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                _dialogues.StartStory(storyJSONassets[9]); 
+                _dialogues.StartStory(storyJSONassets[8]); 
                 }
                 break;
             default:
@@ -88,10 +89,14 @@ public class GameManager : MonoBehaviour
     {
         switch (scene)
         {
-             case 5:
-                scene = 7; break;
+             case 4:
+
+                scene = 6;
+                print("scene 6" +  scene);
+                break;
              default:
                 scene++;
+                print("scene default" );
                 break;
         }
         commodorController.canMove = true;
@@ -101,6 +106,8 @@ public class GameManager : MonoBehaviour
         mouseOver.canOpen = true;
         cameraControl.inDialogue = false;
         playerInput.SwitchCurrentActionMap("Game");
+        if(commodorController.currentNPC != null) { commodorController.currentNPC.GetComponent<EnemyController>().hasTalked = true; }
+       
 
     }
 
