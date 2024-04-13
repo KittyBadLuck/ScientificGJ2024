@@ -107,12 +107,13 @@ public class CommodorController : MonoBehaviour
     {
         if(context.performed)
         {
+            print("interact");
             EnemyController npcControl = currentNPC.GetComponent<EnemyController>();
             if(npcControl.playerNear && !npcControl.hasTalked)
             {
                 if (GAME_STAGE == 4 && gameManager.scene == npcControl.storyStage)
                 {
-
+                    print("startstory");
                     gameManager.StartStory();
                 }
             }
